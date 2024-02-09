@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { App } from 'components/App';
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
+import { GlobalStyle } from 'components/GlobalStyle';
 
 const theme = {
   colors: {
@@ -28,6 +29,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <BrowserRouter basename="/learnLingo">
       <ThemeProvider theme={theme}>
         <App />
+        <GlobalStyle/>
       </ThemeProvider>
     </BrowserRouter>
   </React.StrictMode>
