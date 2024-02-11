@@ -6,7 +6,6 @@ import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from 'components/GlobalStyle';
 
 const theme = {
-  colors: {
     primaryBlack: '#121417',
     primaryGray: '#8A8A89',
     primaryYellow:'#F4C550',
@@ -20,7 +19,6 @@ const theme = {
     lightPink: '#F2C0BD',
     orange: '#F0AA8D',
     lightOrange: '#F4C8BA',
-    }
 }
 
 

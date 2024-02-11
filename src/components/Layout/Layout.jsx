@@ -5,26 +5,35 @@ import {
   HeaderContainer,
   LayoutWrap,
   LogoSvg,
+  NavLinkLogo,
+  NavLinkMenu,
   NavList,
+  NavListMenu,
 } from './Layout.styled';
 
 export const Layout = () => {
   return (
     <LayoutWrap>
       <HeaderContainer>
-          <NavLink to="/">
-            <LogoSvg alt="logo" />
-            LearnLingo
-          </NavLink>
-          <NavList>
-            <li>
-              <NavLink to="/">Home</NavLink>
-            </li>
-            <li>
-              <NavLink to="/teatchers">Teatchers</NavLink>
-            </li>
-          </NavList>
-          <AuthNav />
+        <NavList>
+          <li>
+            <NavLink to="/">
+              <LogoSvg alt="logo" />
+            </NavLink>
+          </li>
+          <li>
+            <NavLinkLogo to="/">LearnLingo</NavLinkLogo>
+          </li>
+        </NavList>
+        <NavListMenu>
+          <li>
+            <NavLinkMenu to="/">Home</NavLinkMenu>
+          </li>
+          <li>
+            <NavLinkMenu to="/teatchers">Teatchers</NavLinkMenu>
+          </li>
+        </NavListMenu>
+        <AuthNav />
       </HeaderContainer>
       <Suspense>
         <Outlet />
