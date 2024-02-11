@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_homework_template=self.webpackChunkreact_homework_template||[]).push([[636],{636:function(e,t,n){n.r(t),n.d(t,{default:function(){return i}});var r,a=n(168),c=n(924).ZP.div(r||(r=(0,a.Z)(["\npadding-left: 128px;\n    padding-right: 128px;\n"]))),u=n(184),i=function(){return(0,u.jsx)(c,{children:"Teatchers"})}}}]);
+//# sourceMappingURL=636.6efeb110.chunk.js.map
