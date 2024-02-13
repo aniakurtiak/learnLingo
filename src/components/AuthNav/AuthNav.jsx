@@ -6,18 +6,18 @@ import {
   RegBtn,
 } from './AuthNav.styled';
 
-export const AuthNav = () => {
+export const AuthNav = ({onClickLogin, onClickRegister}) => {
   return (
     <AuthContainer>
       <NavList>
         <li>
-          <LogBtn>
+          <LogBtn type='button' onClick={onClickLogin}>
             <LogInSvg alt="log in"/>
             Log in
           </LogBtn>
         </li>
         <li>
-          <RegBtn>Registration</RegBtn>
+          <RegBtn type="button" onClick={onClickRegister}>Registration</RegBtn>
         </li>
       </NavList>
     </AuthContainer>

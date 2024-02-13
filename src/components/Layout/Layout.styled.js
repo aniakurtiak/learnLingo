@@ -53,4 +53,7 @@ export const NavLinkMenu = styled(NavLink)`
   letter-spacing: -0.02em;
   color: ${({ theme }) => theme.primaryBlack};
   align-items: center;
+  &.active {
+    color: ${({ theme }) => theme.primaryYellow};
+  }
 `;

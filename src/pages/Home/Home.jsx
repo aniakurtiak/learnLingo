@@ -1,8 +1,14 @@
-import { HomeContainer } from "./Home.styled";
+import { BenefitsContainer, HomeContainer, ImageContainer, InfoContainer, StartContainer } from "./Home.styled";
 
  const Home = () => {
     return (
-        <HomeContainer>Home</HomeContainer>
+        <HomeContainer>
+            <InfoContainer>
+                <StartContainer></StartContainer>
+                <ImageContainer></ImageContainer>
+            </InfoContainer>
+            <BenefitsContainer></BenefitsContainer>
+        </HomeContainer>
     )
 }
 
