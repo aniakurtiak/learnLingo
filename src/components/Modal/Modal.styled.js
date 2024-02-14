@@ -1,5 +1,5 @@
+import { ErrorMessage, Field, Form} from 'formik';
 import styled from 'styled-components';
-import { ReactComponent as CloseBtn } from '../../icons/close.svg';
 
 export const OverLay = styled.div`
   position: fixed;
@@ -21,7 +21,7 @@ export const ModalContainer = styled.div`
   width: 566px;
   background-color: #ffffff;
   border-radius: 30px;
-  flex-shrink: 0;
+
 `;
 
 export const BtnClose = styled.button`
@@ -37,8 +37,7 @@ export const BtnClose = styled.button`
   right: 20px;
 `;
 
-export const CloseSvg = styled(CloseBtn)`
-`;
+// ---------------CONTENT STYLE--------------------------------
 
 export const Title = styled.h2`
 font-weight: 500;
@@ -52,4 +51,50 @@ export const Text = styled.p`
 font-size: 16px;
 line-height: 1.37;
 color: rgba(18, 20, 23, 0.8);
+margin-bottom: 40px;
+`
+
+export const FormStyle = styled(Form)`
+display: flex;
+flex-direction: column;
+gap: 18px;
+`
+
+export const FieldStyle = styled(Field)`
+border: 1px solid rgba(18, 20, 23, 0.1);
+border-radius: 12px;
+padding: 16px 18px;
+width: 438px;
+height: 54px;
+
+&::placeholder {
+  color: ${({theme}) => theme.primaryBlack};
+}
+
+&:focus {
+  outline: none;
+ border-color: ${({theme}) => theme.primaryYellow};
+}
+`
+
+export const ErrMsg = styled(ErrorMessage)`
+font-size: 14px;
+color: red;
+margin-top: -10px;
+`
+
+export const BtnSubmit = styled.button`
+border-radius: 12px;
+padding: 16px;
+width: 438px;
+height: 60px;
+background: ${({theme}) => theme.primaryYellow};
+font-weight: 700;
+font-size: 18px;
+line-height: 1.56;
+color: ${({theme}) => theme.primaryBlack};
+
+&:hover {
+  background: ${({theme}) => theme.primaryLightYellow};
+}
 `

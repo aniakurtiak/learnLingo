@@ -1,7 +1,8 @@
 import React from 'react';
 import { createPortal } from 'react-dom';
-import { BtnClose, CloseSvg, ModalContainer, OverLay } from './Modal.styled';
+import { BtnClose, ModalContainer, OverLay } from './Modal.styled';
 import { useEffect } from 'react';
+import { ReactComponent as CloseBtnSvg } from '../../icons/close.svg';
 
 const modalElement = document.getElementById('portal');
 
@@ -32,7 +33,7 @@ export const Modal = ({ children, title, text, toggleModal }) => {
    <OverLay onMouseDown={onClickBackdrop}>
       <ModalContainer >
         <BtnClose onClick={toggleModal} type="button">
-          <CloseSvg alt="close" />
+          <CloseBtnSvg alt="close" />
         </BtnClose>
         {children}
       </ModalContainer>
@@ -40,3 +41,4 @@ export const Modal = ({ children, title, text, toggleModal }) => {
     modalElement
   );
 };
+
