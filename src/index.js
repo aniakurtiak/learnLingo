@@ -23,12 +23,11 @@ const theme = {
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
     <BrowserRouter basename="/learnLingo">
       <ThemeProvider theme={theme}>
         <App />
         <GlobalStyle/>
       </ThemeProvider>
     </BrowserRouter>
-  </React.StrictMode>
+
 );

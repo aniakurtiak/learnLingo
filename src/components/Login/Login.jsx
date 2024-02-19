@@ -2,6 +2,7 @@ import { Formik } from 'formik';
 import { BtnSubmit, ErrMsg, FieldStyle, FormStyle, Text, Title } from '../Modal/Modal.styled';
 import { useState } from 'react';
 import * as Yup from 'yup';
+import { AuthProvider } from 'components/AuthProvider/AuthProvider';
 
 export const Login = () => {
   const [emailEntered, setEmailEntered] = useState(false);
@@ -15,6 +16,7 @@ export const Login = () => {
 
   return (
     <div>
+      <AuthProvider/>
       <Title>Log In</Title>
       <Text>
         Welcome back! Please enter your credentials to access your account and
