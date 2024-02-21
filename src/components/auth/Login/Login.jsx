@@ -1,8 +1,9 @@
 import { Formik } from 'formik';
-import { BtnSubmit, ErrMsg, FieldStyle, FormStyle, Text, Title } from '../Modal/Modal.styled';
+import { BtnSubmit, ErrMsg, FieldStyle, FormStyle, Text, Title } from '../../Modal/Modal.styled';
 import { useState } from 'react';
 import * as Yup from 'yup';
-import { AuthProvider } from 'components/AuthProvider/AuthProvider';
+import { AuthProvider } from 'components/auth/AuthProvider/AuthProvider';
+
 
 export const Login = () => {
   const [emailEntered, setEmailEntered] = useState(false);

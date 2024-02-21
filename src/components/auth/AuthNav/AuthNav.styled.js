@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ReactComponent as LogIn } from '../../icons/log-in-01.svg';
+import { ReactComponent as LogIn } from '../../../icons/log-in-01.svg';
 
 export const AuthContainer = styled.div`
   display: flex;

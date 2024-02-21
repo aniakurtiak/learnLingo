@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { getAuth, signInWithPopup } from 'firebase/auth';
-import { app, googleAuthProvider } from '../../firebase';
+import { app, googleAuthProvider } from '../../../firebase';
 
 export const AuthProvider = () => {
   const auth = getAuth(app);

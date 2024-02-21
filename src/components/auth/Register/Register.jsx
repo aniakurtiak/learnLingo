@@ -1,4 +1,13 @@
-import { BtnSubmit, ErrMsg, FieldStyle, FormStyle, Text, Title } from 'components/Modal/Modal.styled';
+import {
+  BtnSubmit,
+  ErrMsg,
+  FieldStyle,
+  FormStyle,
+  Text,
+  Title,
+} from 'components/Modal/Modal.styled';
+import { auth } from '../../../firebase';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { Formik } from 'formik';
 import { useState } from 'react';
 import * as Yup from 'yup';
@@ -7,6 +16,19 @@ export const Register = () => {
   const [nameEntered, setNameEntered] = useState(false);
   const [emailEntered, setEmailEntered] = useState(false);
   const [passwordEntered, setPasswordEntered] = useState(false);
+
+  const handleSubmit = values => {
+    const { email, password } = values;
+
+    createUserWithEmailAndPassword(auth, email, password)
+      .then(userCredential => {
+        const user = userCredential.user;
+        console.log('User registered successfully:', user);
+      })
+      .catch(err => {
+        console.error('Registration error:', err.message);
+      });
+  };
 
   const RegisterSchema = Yup.object().shape({
     name: Yup.string()
@@ -31,18 +53,11 @@ export const Register = () => {
           email: '',
           password: '',
         }}
-        onSubmit={values => console.log(values)}
+        onSubmit={handleSubmit}
         validationSchema={RegisterSchema}
       >
-        {({
-          values,
-          errors,
-          touched,
-          handleChange,
-          handleBlur,
-          handleSubmit,
-        }) => (
-            <FormStyle onSubmit={handleSubmit}>
+        {({ values, errors, touched, handleChange, handleBlur }) => (
+          <FormStyle>
             <FieldStyle
               name="name"
               placeholder={nameEntered ? '' : 'Name'}

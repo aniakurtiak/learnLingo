@@ -1,4 +1,4 @@
-import { AuthNav } from 'components/AuthNav/AuthNav';
+import { AuthNav } from 'components/auth/AuthNav/AuthNav';
 import { Suspense, useState } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import {
@@ -11,8 +11,8 @@ import {
   NavListMenu,
 } from './Layout.styled';
 import { Modal } from 'components/Modal/Modal';
-import { Login } from 'components/Login/Login';
-import { Register } from 'components/Register/Register';
+import { Login } from 'components/auth/Login/Login';
+import { Register } from 'components/auth/Register/Register';
 
 export const Layout = () => {
   const [isOpen, setIsOpen] = useState(false);
