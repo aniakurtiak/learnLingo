@@ -1,5 +1,6 @@
 import { ErrorMessage, Field, Form} from 'formik';
 import styled from 'styled-components';
+import { ReactComponent as GoogleSvg } from '../../icons/google.svg';
 
 export const OverLay = styled.div`
   position: fixed;
@@ -84,6 +85,7 @@ margin-top: -10px;
 `
 
 export const BtnSubmit = styled.button`
+margin-top: 22px;
 border-radius: 12px;
 padding: 16px;
 width: 438px;
@@ -98,3 +100,29 @@ color: ${({theme}) => theme.primaryBlack};
   background: ${({theme}) => theme.primaryLightYellow};
 }
 `
+
+export const BtnSubmitGoogle = styled.button`
+margin-top: 18px;
+border-radius: 12px;
+padding: 16px;
+width: 438px;
+height: 60px;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 8px;
+background: transparent;
+border: 1px solid rgba(18, 20, 23, 0.1);
+
+font-size: 16px;
+line-height: 1.37;
+color: rgba(18, 20, 23, 0.8);
+
+&:hover {
+  border-color: ${({theme}) => theme.primaryYellow};
+}
+`
+export const BtnGoogleSvg = styled(GoogleSvg)`
+width: 20px;
+height: 20px;
+`;

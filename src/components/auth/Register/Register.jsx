@@ -11,6 +11,7 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { Formik } from 'formik';
 import { useState } from 'react';
 import * as Yup from 'yup';
+import { AuthProvider } from '../AuthProvider/AuthProvider';
 
 export const Register = () => {
   const [nameEntered, setNameEntered] = useState(false);
@@ -82,6 +83,7 @@ export const Register = () => {
           </FormStyle>
         )}
       </Formik>
+      <AuthProvider/>
     </div>
   );
 };

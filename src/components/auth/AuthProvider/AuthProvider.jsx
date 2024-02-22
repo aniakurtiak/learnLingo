@@ -1,24 +1,24 @@
-import { useEffect, useState } from 'react';
-import { getAuth, signInWithPopup } from 'firebase/auth';
-import { app, googleAuthProvider } from '../../../firebase';
+import {signInWithPopup } from 'firebase/auth';
+import { auth, googleAuthProvider } from '../../../firebase';
+import { BtnGoogleSvg, BtnSubmitGoogle } from 'components/Modal/Modal.styled';
 
 export const AuthProvider = () => {
-  const auth = getAuth(app);
-  const [user, setUser] = useState(auth.currentUser);
 
-  useEffect(() => {
-    const unsub = auth.onAuthStateChanged(maybeUser => {
-      
-      if (maybeUser !== null) {
-        return setUser(maybeUser);
-      }
-      signInWithPopup(auth, googleAuthProvider)
-        .then(credetnials => setUser(credetnials.user))
-        .catch(err => console.error(err));
-    });
+  function handleSubmitwithGoogle() {
+    signInWithPopup(auth, googleAuthProvider)
+      .then(userCredential => {
+        const user = userCredential.user;
+        console.log('User login successfully:', user);
+      })
+      .catch(err => {
+        console.log("SORRY, COULDN'T FIND YOUR ACCOUNT:", err.message);
+      });
+  }
 
-    return unsub;
-  }, [auth]);
-
-  return user !== null ? <>{user.displayName}</> : <>loading...</>;
+  return (
+    <BtnSubmitGoogle onClick={handleSubmitwithGoogle}>
+    <BtnGoogleSvg alt="Google" />
+    Continue with Google
+  </BtnSubmitGoogle>
+  )
 };

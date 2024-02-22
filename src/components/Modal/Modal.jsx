@@ -6,7 +6,7 @@ import { ReactComponent as CloseBtnSvg } from '../../icons/close.svg';
 
 const modalElement = document.getElementById('portal');
 
-export const Modal = ({ children, title, text, toggleModal }) => {
+export const Modal = ({ children, toggleModal }) => {
   const onClickBackdrop = e => {
     if (e.target === e.currentTarget) {
       toggleModal();
@@ -30,15 +30,14 @@ export const Modal = ({ children, title, text, toggleModal }) => {
   }, [toggleModal]);
 
   return createPortal(
-   <OverLay onMouseDown={onClickBackdrop}>
-      <ModalContainer >
+    <OverLay onMouseDown={onClickBackdrop}>
+      <ModalContainer>
         <BtnClose onClick={toggleModal} type="button">
           <CloseBtnSvg alt="close" />
         </BtnClose>
         {children}
       </ModalContainer>
-   </OverLay>,
+    </OverLay>,
     modalElement
   );
 };
-
