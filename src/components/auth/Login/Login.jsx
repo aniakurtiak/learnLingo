@@ -3,11 +3,27 @@ import { BtnSubmit, ErrMsg, FieldStyle, FormStyle, Text, Title } from '../../Mod
 import { useState } from 'react';
 import * as Yup from 'yup';
 import { AuthProvider } from 'components/auth/AuthProvider/AuthProvider';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../../firebase';
 
 
 export const Login = () => {
   const [emailEntered, setEmailEntered] = useState(false);
   const [passwordEntered, setPasswordEntered] = useState(false);
+
+  const handleSubmit = values => {
+    const { email, password } = values;
+
+    signInWithEmailAndPassword(auth, email, password)
+      .then(userCredential => {
+        const user = userCredential.user;
+        console.log('User login successfully:', user);
+      })
+      .catch(err => {
+        console.log("SORRY, COULDN'T FIND YOUR ACCOUNT:", err.message);
+      });
+  };
+
 
   const LoginSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Required'),
@@ -29,7 +45,7 @@ export const Login = () => {
           email: '',
           password: '',
         }}
-        onSubmit={values => console.log(values)}
+        onSubmit={handleSubmit}
         validationSchema = {LoginSchema}
       >
         {({
@@ -38,9 +54,8 @@ export const Login = () => {
           touched,
           handleChange,
           handleBlur,
-          handleSubmit,
         }) => (
-          <FormStyle onSubmit={handleSubmit}>
+          <FormStyle>
             <FieldStyle
               type="email"
               name="email"
