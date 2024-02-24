@@ -13,7 +13,7 @@ import { AuthProvider } from 'components/auth/AuthProvider/AuthProvider';
 import { signInWithEmailAndPassword} from 'firebase/auth';
 import { auth} from '../../../firebase';
 
-export const Login = () => {
+export const Login = ({close}) => {
   const [emailEntered, setEmailEntered] = useState(false);
   const [passwordEntered, setPasswordEntered] = useState(false);
 
@@ -24,6 +24,7 @@ export const Login = () => {
       .then(userCredential => {
         const user = userCredential.user;
         console.log('User login successfully:', user);
+        close();
       })
       .catch(err => {
         console.log("SORRY, COULDN'T FIND YOUR ACCOUNT:", err.message);
@@ -73,7 +74,7 @@ export const Login = () => {
           </FormStyle>
         )}
       </Formik>
-      <AuthProvider/>
+      <AuthProvider close={close}/>
     </div>
   );
 };

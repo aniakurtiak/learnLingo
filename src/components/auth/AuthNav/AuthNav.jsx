@@ -17,7 +17,7 @@ export const AuthNav = ({onClickLogin, onClickRegister}) => {
           </LogBtn>
         </li>
         <li>
-          <RegBtn type="button" onClick={onClickRegister}>Registration</RegBtn>
+          <RegBtn type="button" onClick={onClickRegister} >Registration</RegBtn>
         </li>
       </NavList>
     </AuthContainer>

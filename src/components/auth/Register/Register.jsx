@@ -13,7 +13,7 @@ import { useState } from 'react';
 import * as Yup from 'yup';
 import { AuthProvider } from '../AuthProvider/AuthProvider';
 
-export const Register = () => {
+export const Register = ({close}) => {
   const [nameEntered, setNameEntered] = useState(false);
   const [emailEntered, setEmailEntered] = useState(false);
   const [passwordEntered, setPasswordEntered] = useState(false);
@@ -25,6 +25,7 @@ export const Register = () => {
       .then(userCredential => {
         const user = userCredential.user;
         console.log('User registered successfully:', user);
+        close();
       })
       .catch(err => {
         console.error('Registration error:', err.message);
@@ -83,7 +84,7 @@ export const Register = () => {
           </FormStyle>
         )}
       </Formik>
-      <AuthProvider/>
+      <AuthProvider close={close}/>
     </div>
   );
 };

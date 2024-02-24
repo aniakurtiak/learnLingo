@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { ReactComponent as LogIn } from '../../../icons/log-in-01.svg';
+import { ReactComponent as LogOut } from '../../../icons/log-out.svg';
 
 export const AuthContainer = styled.div`
   display: flex;
@@ -30,7 +31,7 @@ font-size: 16px;
 line-height: 125%;
 color: #121417;
 background: none;
-width: 73px;
+min-width: 73px;
 display: flex;
 align-items: center;
 gap: 8px;
@@ -41,3 +42,24 @@ width: 20px;
 height: 20px;
 stroke: ${({ theme }) => theme.primaryYellow};
 `;
+
+
+export const LogOutSvg = styled(LogOut)`
+width: 20px;
+height: 20px;
+stroke: ${({ theme }) => theme.primaryYellow};
+`;
+
+export const TextItem = styled.li`
+border-radius: 12px;
+padding: 14px 39px;
+width: 166px;
+height: 48px;
+/* background: ${({ theme }) => theme.primaryBlack}; */
+font-weight: 700;
+font-size: 16px;
+line-height: 1.25;
+/* color: #fff; */
+border-radius: 12px;
+border: 1px solid ${({theme}) => theme.primaryYellow};
+`

@@ -13,6 +13,8 @@ import {
 import { Modal } from 'components/Modal/Modal';
 import { Login } from 'components/auth/Login/Login';
 import { Register } from 'components/auth/Register/Register';
+import { auth } from '../../firebase';
+import { AuthNavOut } from 'components/auth/AuthNavOut/AuthNavOut';
 
 export const Layout = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,6 +39,7 @@ export const Layout = () => {
   const close = () => {
     setIsOpen(false);
   };
+const isCurrentUser = auth.currentUser;
 
   return (
     <LayoutWrap>
@@ -59,10 +62,14 @@ export const Layout = () => {
             <NavLinkMenu to="/teatchers">Teatchers</NavLinkMenu>
           </li>
         </NavListMenu>
-        <AuthNav
-          onClickLogin={onClickLogin}
-          onClickRegister={onClickRegister}
-        />
+        {isCurrentUser ? (
+          <AuthNavOut />
+        ) : (
+          <AuthNav
+            onClickLogin={onClickLogin}
+            onClickRegister={onClickRegister}
+          />
+        )}
       </HeaderContainer>
       <Suspense>
         <Outlet />

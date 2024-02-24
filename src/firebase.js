@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { GoogleAuthProvider, getAuth } from "firebase/auth";
 import { getDatabase } from "firebase/database";
+import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAXOHSnwXDXyo08kuoU4yEaQGLMAoHlhNo",
@@ -12,11 +13,25 @@ const firebaseConfig = {
   databaseURL: "https://learnlingo-7d407-default-rtdb.europe-west1.firebasedatabase.app/",
 };
 
+// const firebaseConfig = {
+//   apiKey: process.env.REACT_APP_API_KEY,
+//   authDomain: "learnlingocom.firebaseapp.com",
+//   projectId: "learnlingocom",
+//   storageBucket: "learnlingocom.appspot.com",
+//   messagingSenderId: "143061014194",
+//   appId: "1:143061014194:web:8170b1ba93701eb8631bab",
+//   measurementId: "G-YDY41SJS74"
+// };
 
-export const app = initializeApp(firebaseConfig);
 
-export const googleAuthProvider = new GoogleAuthProvider();
+ const app = initializeApp(firebaseConfig);
 
-export const database = getDatabase(app);
+ const googleAuthProvider = new GoogleAuthProvider();
 
-export const auth = getAuth(app);
+ const database = getDatabase(app);
+
+ const auth = getAuth(app);
+
+ const analytics = getAnalytics(app);
+
+ export {app, googleAuthProvider, database, auth, analytics}
