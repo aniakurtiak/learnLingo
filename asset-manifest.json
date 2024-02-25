@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/learnLingo/static/css/main.cd2e038f.css",
-    "main.js": "/learnLingo/static/js/main.6709306c.js",
-    "static/js/437.c4114b94.chunk.js": "/learnLingo/static/js/437.c4114b94.chunk.js",
+    "main.js": "/learnLingo/static/js/main.444cdf20.js",
+    "static/js/437.504789b5.chunk.js": "/learnLingo/static/js/437.504789b5.chunk.js",
     "static/js/636.f46f4241.chunk.js": "/learnLingo/static/js/636.f46f4241.chunk.js",
     "static/js/786.89659277.chunk.js": "/learnLingo/static/js/786.89659277.chunk.js",
     "static/media/girl.svg": "/learnLingo/static/media/girl.185dee334a8a98a1083cb04a4353cb67.svg",
@@ -14,13 +14,13 @@
     "static/media/log-out.svg": "/learnLingo/static/media/log-out.dcacb95357c0ea1561f08007afe30794.svg",
     "static/media/close.svg": "/learnLingo/static/media/close.79c2124edd945aaf110064907aeca72b.svg",
     "main.cd2e038f.css.map": "/learnLingo/static/css/main.cd2e038f.css.map",
-    "main.6709306c.js.map": "/learnLingo/static/js/main.6709306c.js.map",
-    "437.c4114b94.chunk.js.map": "/learnLingo/static/js/437.c4114b94.chunk.js.map",
+    "main.444cdf20.js.map": "/learnLingo/static/js/main.444cdf20.js.map",
+    "437.504789b5.chunk.js.map": "/learnLingo/static/js/437.504789b5.chunk.js.map",
     "636.f46f4241.chunk.js.map": "/learnLingo/static/js/636.f46f4241.chunk.js.map",
     "786.89659277.chunk.js.map": "/learnLingo/static/js/786.89659277.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cd2e038f.css",
-    "static/js/main.6709306c.js"
+    "static/js/main.444cdf20.js"
   ]
 }
