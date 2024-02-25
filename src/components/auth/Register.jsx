@@ -1,4 +1,3 @@
-import { Formik } from 'formik';
 import {
   BtnSubmit,
   ErrMsg,
@@ -6,56 +5,67 @@ import {
   FormStyle,
   Text,
   Title,
-} from '../../Modal/Modal.styled';
+} from 'components/Modal/Modal.styled';
+import { auth } from '../../firebase';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { Formik } from 'formik';
 import { useState } from 'react';
 import * as Yup from 'yup';
-import { AuthProvider } from 'components/auth/AuthProvider/AuthProvider';
-import { signInWithEmailAndPassword} from 'firebase/auth';
-import { auth} from '../../../firebase';
+import { AuthProvider } from './AuthProvider';
 
-export const Login = ({close}) => {
+export const Register = ({close}) => {
+  const [nameEntered, setNameEntered] = useState(false);
   const [emailEntered, setEmailEntered] = useState(false);
   const [passwordEntered, setPasswordEntered] = useState(false);
 
   const handleSubmit = values => {
     const { email, password } = values;
 
-    signInWithEmailAndPassword(auth, email, password)
+    createUserWithEmailAndPassword(auth, email, password)
       .then(userCredential => {
         const user = userCredential.user;
-        console.log('User login successfully:', user);
+        console.log('User registered successfully:', user);
         close();
       })
       .catch(err => {
-        console.log("SORRY, COULDN'T FIND YOUR ACCOUNT:", err.message);
+        console.error('Registration error:', err.message);
       });
   };
 
-
-
-  const LoginSchema = Yup.object().shape({
+  const RegisterSchema = Yup.object().shape({
+    name: Yup.string()
+      .min(2, 'Too Short!')
+      .max(20, 'Too Long!')
+      .required('Required'),
     email: Yup.string().email('Invalid email').required('Required'),
     password: Yup.string().min(8, 'Too Short!').required('Required'),
   });
 
   return (
     <div>
-      <Title>Log In</Title>
+      <Title>Registration</Title>
       <Text>
-        Welcome back! Please enter your credentials to access your account and
-        continue your search for an teacher.
+        Thank you for your interest in our platform! In order to register, we
+        need some information. Please provide us with the following information
       </Text>
 
       <Formik
         initialValues={{
+          name: '',
           email: '',
           password: '',
         }}
         onSubmit={handleSubmit}
-        validationSchema={LoginSchema}
+        validationSchema={RegisterSchema}
       >
         {({ values, errors, touched, handleChange, handleBlur }) => (
           <FormStyle>
+            <FieldStyle
+              name="name"
+              placeholder={nameEntered ? '' : 'Name'}
+              onFocus={() => setNameEntered(true)}
+            />
+            <ErrMsg name="name" component="div" />
             <FieldStyle
               type="email"
               name="email"
@@ -70,7 +80,7 @@ export const Login = ({close}) => {
               onFocus={() => setPasswordEntered(true)}
             />
             <ErrMsg name="password" component="div" />
-            <BtnSubmit type="submit">Log in</BtnSubmit>
+            <BtnSubmit type="submit">Sign up</BtnSubmit>
           </FormStyle>
         )}
       </Formik>

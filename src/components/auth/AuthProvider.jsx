@@ -1,5 +1,5 @@
 import {signInWithPopup } from 'firebase/auth';
-import { auth, googleAuthProvider } from '../../../firebase';
+import { auth, googleAuthProvider } from '../../firebase';
 import { BtnGoogleSvg, BtnSubmitGoogle } from 'components/Modal/Modal.styled';
 
 export const AuthProvider = ({close}) => {

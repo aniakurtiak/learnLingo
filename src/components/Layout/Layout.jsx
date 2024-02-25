@@ -8,8 +8,8 @@ import {
   NavList,
 } from './Layout.styled';
 import { Modal } from 'components/Modal/Modal';
-import { Login } from 'components/auth/Login/Login';
-import { Register } from 'components/auth/Register/Register';
+import { Login } from 'components/auth/Login';
+import { Register } from 'components/auth/Register';
 import { Navigation } from 'components/navigation/Navigation';
 
 export const Layout = () => {

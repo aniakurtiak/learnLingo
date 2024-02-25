@@ -1,6 +1,8 @@
+import { FavoritesContainer } from "./Favorites.styled"
+
 const Favorites = () => {
 return (
-    <div>Favorites</div>
+    <FavoritesContainer>Favorites</FavoritesContainer>
 )
 }
 
