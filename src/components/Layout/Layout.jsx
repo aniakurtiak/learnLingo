@@ -10,7 +10,7 @@ import {
 import { Modal } from 'components/Modal/Modal';
 import { Login } from 'components/auth/Login/Login';
 import { Register } from 'components/auth/Register/Register';
-import { Navigation } from 'components/auth/Navigation';
+import { Navigation } from 'components/navigation/Navigation';
 
 export const Layout = () => {
   const [isOpen, setIsOpen] = useState(false);

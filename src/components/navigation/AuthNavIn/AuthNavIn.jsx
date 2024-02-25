@@ -7,7 +7,7 @@ import {
   RegBtn,
 } from './AuthNav.styled';
 
-export const AuthNav = ({ onClickLogin, onClickRegister }) => {
+export const AuthNavIn = ({ onClickLogin, onClickRegister }) => {
   return (
     <>
       <NavListMenu>

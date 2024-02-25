@@ -6,7 +6,7 @@ import {
   LogInSvg,
   NavList,
   TextItem,
-} from '../AuthNav/AuthNav.styled';
+} from '../AuthNavIn/AuthNav.styled';
 import { NavLinkMenu, NavListMenu } from 'components/Layout/Layout.styled';
 
 export const AuthNavOut = () => {

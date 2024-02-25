@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { AuthNavOut } from './AuthNavOut/AuthNavOut';
-import { AuthNav } from './AuthNav/AuthNav';
+import { AuthNavIn } from './AuthNavIn/AuthNavIn';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../../firebase';
 
@@ -23,9 +23,9 @@ export const Navigation = ({ onClickLogin, onClickRegister }) => {
 
 
   return  authUser ? (
-        <AuthNavOut />
+        <AuthNavOut/>
       ) : (
-        <AuthNav
+        <AuthNavIn
           onClickLogin={onClickLogin}
           onClickRegister={onClickRegister}
         />
