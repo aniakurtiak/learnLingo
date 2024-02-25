@@ -1,23 +1,24 @@
 {
   "files": {
     "main.css": "/learnLingo/static/css/main.cd2e038f.css",
-    "main.js": "/learnLingo/static/js/main.3245f070.js",
-    "static/js/304.992f67bb.chunk.js": "/learnLingo/static/js/304.992f67bb.chunk.js",
-    "static/js/636.ecde5129.chunk.js": "/learnLingo/static/js/636.ecde5129.chunk.js",
-    "static/js/733.63f26c70.chunk.js": "/learnLingo/static/js/733.63f26c70.chunk.js",
+    "main.js": "/learnLingo/static/js/main.98ff493f.js",
+    "static/js/304.c997cdeb.chunk.js": "/learnLingo/static/js/304.c997cdeb.chunk.js",
+    "static/js/636.f46f4241.chunk.js": "/learnLingo/static/js/636.f46f4241.chunk.js",
+    "static/js/733.7b4ce188.chunk.js": "/learnLingo/static/js/733.7b4ce188.chunk.js",
     "index.html": "/learnLingo/index.html",
     "static/media/google.svg": "/learnLingo/static/media/google.368f2057b46c497c889b9c0234ab5c24.svg",
     "static/media/ukraine.svg": "/learnLingo/static/media/ukraine.b46d9da2bfad7002340ef8424027603b.svg",
     "static/media/log-in-01.svg": "/learnLingo/static/media/log-in-01.2e2c4ca18dba3c1719f093c1ce8337b3.svg",
+    "static/media/log-out.svg": "/learnLingo/static/media/log-out.dcacb95357c0ea1561f08007afe30794.svg",
     "static/media/close.svg": "/learnLingo/static/media/close.79c2124edd945aaf110064907aeca72b.svg",
     "main.cd2e038f.css.map": "/learnLingo/static/css/main.cd2e038f.css.map",
-    "main.3245f070.js.map": "/learnLingo/static/js/main.3245f070.js.map",
-    "304.992f67bb.chunk.js.map": "/learnLingo/static/js/304.992f67bb.chunk.js.map",
-    "636.ecde5129.chunk.js.map": "/learnLingo/static/js/636.ecde5129.chunk.js.map",
-    "733.63f26c70.chunk.js.map": "/learnLingo/static/js/733.63f26c70.chunk.js.map"
+    "main.98ff493f.js.map": "/learnLingo/static/js/main.98ff493f.js.map",
+    "304.c997cdeb.chunk.js.map": "/learnLingo/static/js/304.c997cdeb.chunk.js.map",
+    "636.f46f4241.chunk.js.map": "/learnLingo/static/js/636.f46f4241.chunk.js.map",
+    "733.7b4ce188.chunk.js.map": "/learnLingo/static/js/733.7b4ce188.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cd2e038f.css",
-    "static/js/main.3245f070.js"
+    "static/js/main.98ff493f.js"
   ]
 }
