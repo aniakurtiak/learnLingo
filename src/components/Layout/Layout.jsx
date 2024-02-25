@@ -1,4 +1,3 @@
-import { AuthNav } from 'components/auth/AuthNav/AuthNav';
 import { Suspense, useState } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import {
@@ -6,15 +5,12 @@ import {
   LayoutWrap,
   LogoSvg,
   NavLinkLogo,
-  NavLinkMenu,
   NavList,
-  NavListMenu,
 } from './Layout.styled';
 import { Modal } from 'components/Modal/Modal';
 import { Login } from 'components/auth/Login/Login';
 import { Register } from 'components/auth/Register/Register';
-import { auth } from '../../firebase';
-import { AuthNavOut } from 'components/auth/AuthNavOut/AuthNavOut';
+import { Navigation } from 'components/auth/Navigation';
 
 export const Layout = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,7 +35,6 @@ export const Layout = () => {
   const close = () => {
     setIsOpen(false);
   };
-const isCurrentUser = auth.currentUser;
 
   return (
     <LayoutWrap>
@@ -54,22 +49,10 @@ const isCurrentUser = auth.currentUser;
             <NavLinkLogo to="/">LearnLingo</NavLinkLogo>
           </li>
         </NavList>
-        <NavListMenu>
-          <li>
-            <NavLinkMenu to="/">Home</NavLinkMenu>
-          </li>
-          <li>
-            <NavLinkMenu to="/teatchers">Teatchers</NavLinkMenu>
-          </li>
-        </NavListMenu>
-        {isCurrentUser ? (
-          <AuthNavOut />
-        ) : (
-          <AuthNav
-            onClickLogin={onClickLogin}
-            onClickRegister={onClickRegister}
-          />
-        )}
+        <Navigation
+          onClickLogin={onClickLogin}
+          onClickRegister={onClickRegister}
+        />
       </HeaderContainer>
       <Suspense>
         <Outlet />

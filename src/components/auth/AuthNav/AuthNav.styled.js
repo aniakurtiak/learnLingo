@@ -4,7 +4,7 @@ import { ReactComponent as LogOut } from '../../../icons/log-out.svg';
 
 export const AuthContainer = styled.div`
   display: flex;
- 
+  align-items: center; 
 `;
 
 export const NavList = styled.ul`
@@ -55,11 +55,9 @@ border-radius: 12px;
 padding: 14px 39px;
 width: 166px;
 height: 48px;
-/* background: ${({ theme }) => theme.primaryBlack}; */
 font-weight: 700;
 font-size: 16px;
 line-height: 1.25;
-/* color: #fff; */
 border-radius: 12px;
 border: 1px solid ${({theme}) => theme.primaryYellow};
 `

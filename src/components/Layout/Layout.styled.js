@@ -10,6 +10,7 @@ export const LayoutWrap = styled.div`
 `;
 
 export const HeaderContainer = styled.header`
+  width: 100%;
   display: flex;
   padding-left: 128px;
   padding-right: 128px;
@@ -41,6 +42,7 @@ export const NavListMenu = styled.ul`
   display: flex;
   gap: 28px;
   align-items: center;
+  justify-content: center;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.25;

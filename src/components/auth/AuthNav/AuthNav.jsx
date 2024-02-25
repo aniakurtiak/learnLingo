@@ -1,3 +1,4 @@
+import { NavLinkMenu, NavListMenu } from 'components/Layout/Layout.styled';
 import {
   AuthContainer,
   LogBtn,
@@ -6,20 +7,32 @@ import {
   RegBtn,
 } from './AuthNav.styled';
 
-export const AuthNav = ({onClickLogin, onClickRegister}) => {
+export const AuthNav = ({ onClickLogin, onClickRegister }) => {
   return (
-    <AuthContainer>
-      <NavList>
+    <>
+      <NavListMenu>
         <li>
-          <LogBtn type='button' onClick={onClickLogin}>
-            <LogInSvg alt="log in"/>
-            Log in
-          </LogBtn>
+          <NavLinkMenu to="/">Home</NavLinkMenu>
         </li>
         <li>
-          <RegBtn type="button" onClick={onClickRegister} >Registration</RegBtn>
+          <NavLinkMenu to="/teatchers">Teatchers</NavLinkMenu>
         </li>
-      </NavList>
-    </AuthContainer>
+      </NavListMenu>
+      <AuthContainer>
+        <NavList>
+          <li>
+            <LogBtn type="button" onClick={onClickLogin}>
+              <LogInSvg alt="log in" />
+              Log in
+            </LogBtn>
+          </li>
+          <li>
+            <RegBtn type="button" onClick={onClickRegister}>
+              Registration
+            </RegBtn>
+          </li>
+        </NavList>
+      </AuthContainer>
+    </>
   );
 };
