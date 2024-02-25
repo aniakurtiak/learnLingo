@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { ReactComponent as Logo } from '../../icons/ukraine.svg';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export const LayoutWrap = styled.div`
   min-width: 320px;
@@ -38,24 +38,4 @@ export const NavLinkLogo = styled(Link)`
   align-items: center;
 `;
 
-export const NavListMenu = styled.ul`
-  display: flex;
-  gap: 28px;
-  align-items: center;
-  justify-content: center;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.25;
-  color: ${({ theme }) => theme.primaryBlack};
-`;
 
-export const NavLinkMenu = styled(NavLink)`
-  font-size: 16px;
-  line-height: 1.25;
-  letter-spacing: -0.02em;
-  color: ${({ theme }) => theme.primaryBlack};
-  align-items: center;
-  &.active {
-    color: ${({ theme }) => theme.primaryYellow};
-  }
-`;

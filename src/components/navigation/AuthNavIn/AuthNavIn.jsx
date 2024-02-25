@@ -1,10 +1,11 @@
-import { NavLinkMenu, NavListMenu } from 'components/Layout/Layout.styled';
 import {
   AuthContainer,
   LogBtn,
   LogInSvg,
   NavList,
   RegBtn,
+  NavLinkMenu,
+  NavListMenu,
 } from './AuthNav.styled';
 
 export const AuthNavIn = ({ onClickLogin, onClickRegister }) => {

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { ReactComponent as LogIn } from '../../../icons/log-in-01.svg';
 import { ReactComponent as LogOut } from '../../../icons/log-out.svg';
+import { NavLink } from "react-router-dom";
 
 export const AuthContainer = styled.div`
   display: flex;
@@ -61,3 +62,25 @@ line-height: 1.25;
 border-radius: 12px;
 border: 1px solid ${({theme}) => theme.primaryYellow};
 `
+
+export const NavListMenu = styled.ul`
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  color: ${({ theme }) => theme.primaryBlack};
+`;
+
+export const NavLinkMenu = styled(NavLink)`
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: ${({ theme }) => theme.primaryBlack};
+  align-items: center;
+  &.active {
+    color: ${({ theme }) => theme.primaryYellow};
+  }
+`;
