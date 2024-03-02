@@ -3,7 +3,7 @@ import { Layout } from './Layout/Layout';
 import { lazy } from 'react';
 
 const Home = lazy(() => import('../pages/Home/Home'));
-const Teatchers = lazy(() => import('../pages/Teatchers/Teatchers'));
+const Teachers = lazy(() => import('../pages/Teachers/Teachers'));
 const Favorites = lazy(() => import('../pages/Favorites/Favorites'));
 
 export const App = () => {
@@ -11,7 +11,7 @@ export const App = () => {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
-        <Route path="teatchers" element={<Teatchers />} />
+        <Route path="teachers" element={<Teachers />} />
         <Route path="favorites" element={<Favorites />} />
         <Route path="*" element={<Home />} />
       </Route>

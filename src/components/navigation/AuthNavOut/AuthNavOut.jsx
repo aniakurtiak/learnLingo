@@ -27,7 +27,7 @@ export const AuthNavOut = () => {
           <NavLinkMenu to="/">Home</NavLinkMenu>
         </li>
         <li>
-          <NavLinkMenu to="/teatchers">Teatchers</NavLinkMenu>
+          <NavLinkMenu to="/teachers">Teachers</NavLinkMenu>
         </li>
         <li>
           <NavLinkMenu to="/favorites">Favorites</NavLinkMenu>

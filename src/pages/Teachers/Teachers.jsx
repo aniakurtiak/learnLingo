@@ -1,5 +1,5 @@
 import { child, get } from 'firebase/database';
-import { TeatchersContainer } from './Teatchers.styled';
+import { TeatchersContainer } from './Teachers.styled';
 import { dbRef } from '../../firebase';
 import React, { useState, useEffect } from 'react';
 import { nanoid } from 'nanoid';

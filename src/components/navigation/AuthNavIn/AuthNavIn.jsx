@@ -16,7 +16,7 @@ export const AuthNavIn = ({ onClickLogin, onClickRegister }) => {
           <NavLinkMenu to="/">Home</NavLinkMenu>
         </li>
         <li>
-          <NavLinkMenu to="/teatchers">Teatchers</NavLinkMenu>
+          <NavLinkMenu to="/teachers">Teachers</NavLinkMenu>
         </li>
       </NavListMenu>
       <AuthContainer>
