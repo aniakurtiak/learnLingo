@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const TeatchersContainer = styled.div`
+export const TeachersContainer = styled.div`
 padding-left: 128px;
     padding-right: 128px;
 `

@@ -1,5 +1,5 @@
 import { child, get } from 'firebase/database';
-import { TeatchersContainer } from './Teachers.styled';
+import { TeachersContainer } from './Teachers.styled';
 import { dbRef } from '../../firebase';
 import React, { useState, useEffect } from 'react';
 import { nanoid } from 'nanoid';
@@ -19,20 +19,20 @@ import { nanoid } from 'nanoid';
 
 // console.log(teatcherList);
 
-const Teatchers = () => {
-  const [teatchers, setTeatchers] = useState(null);
+const Teachers = () => {
+  const [teachers, setTeachers] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const snapshot = await get(child(dbRef, 'teatchers'));
+        const snapshot = await get(child(dbRef, 'teachers'));
 
         if (snapshot.exists()) {
-          const teatchersData = snapshot.val().map(teatcher => ({
-            ...teatcher,
+          const teachersData = snapshot.val().map(teacher => ({
+            ...teacher,
             id: nanoid(),
           }));
-          setTeatchers(teatchersData);
+          setTeachers(teachersData);
         } else {
           console.log('No data available');
         }
@@ -45,33 +45,33 @@ const Teatchers = () => {
   }, []);
 
   return (
-    <TeatchersContainer>
-      {teatchers ? (
+    <TeachersContainer>
+      {teachers ? (
         <div>
-          {teatchers.map(teatcher => (
-            <ul key={teatcher.id}>
-              <li> {teatcher.name} </li>
+          {teachers.map(teacher => (
+            <ul key={teacher.id}>
+              <li> {teacher.name} </li>
               <li>
                 <img
-                  src={teatcher.avatar_url}
+                  src={teacher.avatar_url}
                   loading="lazy"
                   alt="avatar"
                   width="120"
                   height="120"
                 />
               </li>
-              <li>Speaks: {teatcher.languages}</li>
-              <li>Lesson info: {teatcher.lesson_info}</li>
-              <li>{teatcher.conditions}</li>
-              <li>{teatcher.levels}</li>
+              <li>Speaks: {teacher.languages}</li>
+              <li>Lesson info: {teacher.lesson_info}</li>
+              <li>{teacher.conditions}</li>
+              <li>{teacher.levels}</li>
             </ul>
           ))}
         </div>
       ) : (
         <div>Loading...</div>
       )}
-    </TeatchersContainer>
+    </TeachersContainer>
   );
 };
 
-export default Teatchers;
+export default Teachers;
