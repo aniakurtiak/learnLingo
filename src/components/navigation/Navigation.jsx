@@ -7,6 +7,9 @@ import { auth } from '../../firebase';
 export const Navigation = ({ onClickLogin, onClickRegister }) => {
   const [authUser, setAuthUset] = useState(auth.currentUser);
 
+  // const currentUserId = currentUser ? currentUser.uid : null;
+
+
   useEffect(() => {
     const listen = onAuthStateChanged(auth, user => {
       if (user) {

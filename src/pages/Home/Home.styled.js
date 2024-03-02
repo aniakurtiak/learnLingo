@@ -93,6 +93,7 @@ export const BenefitsContainer = styled.div`
   height: 116px;
   background-image: url(${require('../../icons/rectangle-yellow.png')});
   background-size: contain;
+  background-repeat: no-repeat;
   padding: 40px 122px 40px 123px;
 `;
 

@@ -1,16 +1,16 @@
-import { initializeApp } from "firebase/app";
-import { GoogleAuthProvider, getAuth } from "firebase/auth";
-import { getDatabase } from "firebase/database";
-import { getAnalytics } from "firebase/analytics";
+import { initializeApp } from 'firebase/app';
+import { GoogleAuthProvider, getAuth } from 'firebase/auth';
+import { getDatabase, ref } from 'firebase/database';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAXOHSnwXDXyo08kuoU4yEaQGLMAoHlhNo",
-  authDomain: "learnlingo-7d407.firebaseapp.com",
-  projectId: "learnlingo-7d407",
-  storageBucket: "learnlingo-7d407.appspot.com",
-  messagingSenderId: "179165568182",
-  appId: "1:179165568182:web:1909949e86bc66d4f99a17",
-  databaseURL: "https://learnlingo-7d407-default-rtdb.europe-west1.firebasedatabase.app/",
+  apiKey: 'AIzaSyAXOHSnwXDXyo08kuoU4yEaQGLMAoHlhNo',
+  authDomain: 'learnlingo-7d407.firebaseapp.com',
+  projectId: 'learnlingo-7d407',
+  storageBucket: 'learnlingo-7d407.appspot.com',
+  messagingSenderId: '179165568182',
+  appId: '1:179165568182:web:1909949e86bc66d4f99a17',
+  databaseURL:
+    'https://learnlingo-7d407-default-rtdb.europe-west1.firebasedatabase.app/',
 };
 
 // const firebaseConfig = {
@@ -23,15 +23,14 @@ const firebaseConfig = {
 //   measurementId: "G-YDY41SJS74"
 // };
 
+const app = initializeApp(firebaseConfig);
 
- const app = initializeApp(firebaseConfig);
+const googleAuthProvider = new GoogleAuthProvider();
 
- const googleAuthProvider = new GoogleAuthProvider();
+const auth = getAuth(app);
 
- const database = getDatabase(app);
+const database = getDatabase(app);
 
- const auth = getAuth(app);
+const dbRef = ref(getDatabase());
 
- const analytics = getAnalytics(app);
-
- export {app, googleAuthProvider, database, auth, analytics}
+export { app, googleAuthProvider, database, auth, dbRef };
