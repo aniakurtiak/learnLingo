@@ -3,6 +3,7 @@ import { TeachersContainer } from './Teachers.styled';
 import { dbRef } from '../../firebase';
 import React, { useState, useEffect } from 'react';
 import { nanoid } from 'nanoid';
+import { Card } from 'components/Card/Card';
 
 //  const teatcherList = get(child(dbRef, 'teatchers'))
 //     .then(snapshot => {
@@ -47,26 +48,7 @@ const Teachers = () => {
   return (
     <TeachersContainer>
       {teachers ? (
-        <div>
-          {teachers.map(teacher => (
-            <ul key={teacher.id}>
-              <li> {teacher.name} </li>
-              <li>
-                <img
-                  src={teacher.avatar_url}
-                  loading="lazy"
-                  alt="avatar"
-                  width="120"
-                  height="120"
-                />
-              </li>
-              <li>Speaks: {teacher.languages}</li>
-              <li>Lesson info: {teacher.lesson_info}</li>
-              <li>{teacher.conditions}</li>
-              <li>{teacher.levels}</li>
-            </ul>
-          ))}
-        </div>
+        <Card teachers = {teachers}/>
       ) : (
         <div>Loading...</div>
       )}
