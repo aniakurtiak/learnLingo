@@ -13,7 +13,6 @@ import {
   ItemInfo,
   ItemText,
   LangBlock,
-  LangList,
   ListInfo,
   NameTitle,
   Price,
