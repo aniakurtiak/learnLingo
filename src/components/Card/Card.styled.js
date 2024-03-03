@@ -144,3 +144,72 @@ text-decoration-skip-ink: none;
 export const Block = styled.div`
   display: flex;
 `;
+
+export const BtnMore = styled.button`
+font-weight: 500;
+font-size: 16px;
+line-height: 1.5;
+text-decoration: underline;
+text-decoration-skip-ink: none;
+background: transparent;
+margin-top: 16px;
+`;
+
+export const ExpText = styled.p`
+font-weight: 400;
+font-size: 16px;
+line-height: 1.5;
+margin-top: 16px;
+`;
+
+export const ReviewList = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 32px;
+`;
+
+export const ReviewerImg = styled.img`
+  border-radius: 50%
+`;
+
+export const Reviewblock = styled.div`
+  display: flex;
+ gap: 12px;
+ margin-bottom: 16px;
+`;
+
+export const ReviewRating = styled.div`
+  display: flex;
+  flex-direction: column;
+
+`;
+
+export const LevelList = styled.ul`
+  display: flex;
+  margin-top: 32px;
+  gap: 8px;
+`;
+
+export const LevelItem = styled.li`
+font-weight: 500;
+font-size: 14px;
+line-height: 114%;
+border: 1px solid rgba(18, 20, 23, 0.2);
+border-radius: 35px;
+padding: 8px 12px;
+height: 32px;
+`;
+
+export const RatingBlock = styled.div`
+  display: flex;
+  margin-top: 2px;
+  gap: 8px;
+
+`;
+
+export const ReviewText = styled.p`
+font-weight: 500;
+font-size: 16px;
+line-height: 1.5;
+`;

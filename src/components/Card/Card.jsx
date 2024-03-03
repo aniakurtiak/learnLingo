@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
-    Block,
+  Block,
+  BtnMore,
   CardItem,
   CardList,
   DataItem,
   DataList,
   ElementsContainer,
+  ExpText,
   HeartBtn,
   ImgContainer,
   InfoContainer,
@@ -13,9 +15,17 @@ import {
   ItemInfo,
   ItemText,
   LangBlock,
+  LevelItem,
+  LevelList,
   ListInfo,
   NameTitle,
   Price,
+  RatingBlock,
+  ReviewList,
+  ReviewRating,
+  ReviewText,
+  Reviewblock,
+  ReviewerImg,
   TeacherPhoto,
   Text,
 } from './Card.styled';
@@ -23,6 +33,15 @@ import { ReactComponent as Book } from '../../icons/book-open.svg';
 import { ReactComponent as Star } from '../../icons/star.svg';
 
 export const Card = ({ teachers }) => {
+  const [expandedTeacherId, setExpandedTeacherId] = useState(null);
+
+  const handleReadMoreClick = teacherId => {
+    setExpandedTeacherId(prevId => (prevId === teacherId ? null : teacherId));
+  };
+
+  const getButtonText = teacherId =>
+    expandedTeacherId === teacherId ? 'Hide more' : 'Read More';
+
   return (
     <CardList>
       {teachers.map(teacher => (
@@ -91,6 +110,52 @@ export const Card = ({ teachers }) => {
                 <ItemText>Conditions:</ItemText> {teacher.conditions}
               </ItemInfo>
             </ListInfo>
+            {expandedTeacherId === teacher.id && (
+              <div>
+                <ExpText>{teacher.experience}</ExpText>
+                <ReviewList>
+                  {teacher.reviews ? (
+                    teacher.reviews.map((review, index) => (
+                      <li key={index}>
+                        <Reviewblock>
+                          <ReviewerImg
+                            src={review.photo}
+                            alt="avatar"
+                            width="44"
+                            height="44"
+                          />
+                          <ReviewRating>
+                            <p>{review.reviewer_name}</p>
+                            <RatingBlock>
+                              <Star />
+                              <p> {review.reviewer_rating}</p>
+                            </RatingBlock>
+                          </ReviewRating>
+                        </Reviewblock>
+                        <ReviewText>{review.comment}</ReviewText>
+                      </li>
+                    ))
+                  ) : (
+                    <li>There are no reviews yet</li>
+                  )}
+                </ReviewList>
+              </div>
+            )}
+            <BtnMore onClick={() => handleReadMoreClick(teacher.id)}>
+              {' '}
+              {getButtonText(teacher.id)}
+            </BtnMore>
+            <LevelList>
+              {teacher.levels ? (
+                teacher.levels.map((level, index) => (
+                  <LevelItem key={index}>
+                    <p>{level}</p>
+                  </LevelItem>
+                ))
+              ) : (
+                <li>No levels</li>
+              )}
+            </LevelList>
           </InfoContainer>
         </CardItem>
       ))}

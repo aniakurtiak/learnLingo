@@ -2,8 +2,9 @@ import { child, get } from 'firebase/database';
 import { TeachersContainer } from './Teachers.styled';
 import { dbRef } from '../../firebase';
 import React, { useState, useEffect } from 'react';
-import { nanoid } from 'nanoid';
+// import { nanoid } from 'nanoid';
 import { Card } from 'components/Card/Card';
+// import { useLocation } from 'react-router-dom';
 
 //  const teatcherList = get(child(dbRef, 'teatchers'))
 //     .then(snapshot => {
@@ -22,17 +23,19 @@ import { Card } from 'components/Card/Card';
 
 const Teachers = () => {
   const [teachers, setTeachers] = useState(null);
-
+ 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const snapshot = await get(child(dbRef, 'teachers'));
-
         if (snapshot.exists()) {
-          const teachersData = snapshot.val().map(teacher => ({
-            ...teacher,
-            id: nanoid(),
-          }));
+          const teachersData = [];
+          snapshot.forEach((teacherSnapshot) => {
+            teachersData.push({
+              ...teacherSnapshot.val(),
+              id: teacherSnapshot.key,
+            });
+          });
           setTeachers(teachersData);
         } else {
           console.log('No data available');
@@ -44,6 +47,7 @@ const Teachers = () => {
 
     fetchData();
   }, []);
+
 
   return (
     <TeachersContainer>
