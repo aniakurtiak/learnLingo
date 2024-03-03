@@ -213,3 +213,19 @@ font-weight: 500;
 font-size: 16px;
 line-height: 1.5;
 `;
+
+export const BookBtn = styled.button`
+font-weight: 700;
+font-size: 18px;
+line-height: 156%;
+border-radius: 12px;
+padding: 16px 48px;
+width: 232px;
+height: 60px;
+background: ${({ theme }) => theme.primaryYellow};
+margin-top: 32px;
+
+&:hover {
+  background: ${({theme}) => theme.primaryLightYellow};
+}
+`;

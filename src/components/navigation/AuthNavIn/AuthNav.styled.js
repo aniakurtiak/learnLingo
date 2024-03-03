@@ -24,6 +24,10 @@ font-weight: 700;
 font-size: 16px;
 line-height: 1.25;
 color: #fff;
+
+&:hover {
+  background:  #8a8a89;
+}
 `
 
 export const LogBtn = styled.button`

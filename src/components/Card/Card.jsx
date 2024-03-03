@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {
   Block,
+  BookBtn,
   BtnMore,
   CardItem,
   CardList,
@@ -31,9 +32,26 @@ import {
 } from './Card.styled';
 import { ReactComponent as Book } from '../../icons/book-open.svg';
 import { ReactComponent as Star } from '../../icons/star.svg';
+import { Modal } from 'components/Modal/Modal';
+import { BookTrialModal } from 'components/BookTrialModal/BookTrialModal';
 
 export const Card = ({ teachers }) => {
+  const [isOpen, setIsOpen] = useState(false);
   const [expandedTeacherId, setExpandedTeacherId] = useState(null);
+  const [selectedTeacher, setSelectedTeacher] = useState(null);
+
+  const toggleModal = () => {
+    setIsOpen(prevState => !prevState);
+  };
+
+  const hanleBookTrialClick =(teacher) => {
+    setSelectedTeacher(teacher);
+    toggleModal()
+  } 
+
+  const close = () => {
+    setIsOpen(false);
+  };
 
   const handleReadMoreClick = teacherId => {
     setExpandedTeacherId(prevId => (prevId === teacherId ? null : teacherId));
@@ -156,9 +174,17 @@ export const Card = ({ teachers }) => {
                 <li>No levels</li>
               )}
             </LevelList>
+            {expandedTeacherId === teacher.id && (
+              <BookBtn type='button' onClick={()=>hanleBookTrialClick(teacher)}>Book trial lesson</BookBtn>
+            )}
           </InfoContainer>
         </CardItem>
       ))}
+         {isOpen && selectedTeacher && (
+        <Modal toggleModal={toggleModal}>
+          <BookTrialModal teacher = {selectedTeacher} close={close}/>
+        </Modal>
+      )}
     </CardList>
   );
 };

@@ -8,7 +8,7 @@ import {
   NavListMenu,
 } from './AuthNav.styled';
 
-export const AuthNavIn = ({ onClickLogin, onClickRegister }) => {
+export const AuthNavIn = ({ onClickLogin, onClickRegister}) => {
   return (
     <>
       <NavListMenu>

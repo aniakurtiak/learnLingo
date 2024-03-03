@@ -20,8 +20,10 @@ export const ModalContainer = styled.div`
   transform: translate(-50%, -50%);
   padding: 64px;
   width: 566px;
+  overflow: auto;
   background-color: #ffffff;
   border-radius: 30px;
+   max-height: 100vh;
 
 `;
 
@@ -36,6 +38,11 @@ export const BtnClose = styled.button`
   position: absolute;
   top: 20px;
   right: 20px;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 `;
 
 // ---------------CONTENT STYLE--------------------------------
