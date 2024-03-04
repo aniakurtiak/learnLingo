@@ -3,7 +3,7 @@ import { GoogleAuthProvider, getAuth } from 'firebase/auth';
 import { getDatabase, ref } from 'firebase/database';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyAXOHSnwXDXyo08kuoU4yEaQGLMAoHlhNo',
+  apiKey: "AIzaSyAXOHSnwXDXyo08kuoU4yEaQGLMAoHlhNo",
   authDomain: 'learnlingo-7d407.firebaseapp.com',
   projectId: 'learnlingo-7d407',
   storageBucket: 'learnlingo-7d407.appspot.com',
@@ -12,6 +12,7 @@ const firebaseConfig = {
   databaseURL:
     'https://learnlingo-7d407-default-rtdb.europe-west1.firebasedatabase.app/',
 };
+
 
 // const firebaseConfig = {
 //   apiKey: process.env.REACT_APP_API_KEY,

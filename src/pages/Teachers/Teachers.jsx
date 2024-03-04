@@ -1,63 +1,30 @@
-import { child, get } from 'firebase/database';
-import { TeachersContainer } from './Teachers.styled';
-import { dbRef } from '../../firebase';
-import React, { useState, useEffect } from 'react';
-// import { nanoid } from 'nanoid';
 import { Card } from 'components/Card/Card';
-// import { useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchTeachers } from '../../redux/teachers/operations';
+import {
+  selectError,
+  selectIsLoading,
+  selectTeachers,
+} from '../../redux/teachers/selectors';
+import { TeachersContainer } from './Teachers.styled';
 
-//  const teatcherList = get(child(dbRef, 'teatchers'))
-//     .then(snapshot => {
-//       if (snapshot.exists()) {
-//         const teatchers = snapshot.val();
-//         console.log(teatchers);
-//       } else {
-//         console.log('No data available');
-//       }
-//     })
-//     .catch(error => {
-//       console.error(error);
-//     });
+const Teacher = () => {
+  const dispatch = useDispatch();
+  const teachers = useSelector(selectTeachers);
+  const isLoading = useSelector(selectIsLoading);
+  const error = useSelector(selectError);
 
-// console.log(teatcherList);
-
-const Teachers = () => {
-  const [teachers, setTeachers] = useState(null);
- 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const snapshot = await get(child(dbRef, 'teachers'));
-        if (snapshot.exists()) {
-          const teachersData = [];
-          snapshot.forEach((teacherSnapshot) => {
-            teachersData.push({
-              ...teacherSnapshot.val(),
-              id: teacherSnapshot.key,
-            });
-          });
-          setTeachers(teachersData);
-        } else {
-          console.log('No data available');
-        }
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
+    dispatch(fetchTeachers());
+  }, [dispatch]);
 
   return (
     <TeachersContainer>
-      {teachers ? (
-        <Card teachers = {teachers}/>
-      ) : (
-        <div>Loading...</div>
-      )}
+      {isLoading && !error && <b>Loading...</b>}
+      <Card teachers={teachers} />
     </TeachersContainer>
   );
 };
 
-export default Teachers;
+export default Teacher;

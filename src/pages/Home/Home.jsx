@@ -30,7 +30,7 @@ const Home = () => {
             Elevate your language proficiency to new heights by connecting with
             highly qualified and experienced tutors.
           </Text>
-          <LinkStart to="/teatchers">Get started</LinkStart>
+          <LinkStart to="/teachers">Get started</LinkStart>
         </StartContainer>
         <ImageContainer>
           <ImgGirlSvg />
