@@ -1,4 +1,3 @@
-import { Card } from 'components/Card/Card';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchTeachers } from '../../redux/teachers/operations';
@@ -8,8 +7,9 @@ import {
   selectTeachers,
 } from '../../redux/teachers/selectors';
 import { TeachersContainer } from './Teachers.styled';
+import { CardList } from 'components/CardList/CardList';
 
-const Teacher = () => {
+const Teacher = ({authUser}) => {
   const dispatch = useDispatch();
   const teachers = useSelector(selectTeachers);
   const isLoading = useSelector(selectIsLoading);
@@ -22,7 +22,7 @@ const Teacher = () => {
   return (
     <TeachersContainer>
       {isLoading && !error && <b>Loading...</b>}
-      <Card teachers={teachers} />
+      <CardList authUser={authUser} teachers = {teachers}/>
     </TeachersContainer>
   );
 };

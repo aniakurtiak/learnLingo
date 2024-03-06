@@ -13,7 +13,7 @@ import { Register } from 'components/auth/Register';
 import { Navigation } from 'components/navigation/Navigation';
 // import { BookTrialModal } from 'components/BookTrialModal/BookTrialModal';
 
-export const Layout = () => {
+export const Layout = ({authUser}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [loginModal, setLoginModal] = useState(false);
   const [registerModal, setRegisterModal] = useState(false);
@@ -61,6 +61,7 @@ export const Layout = () => {
           </li>
         </NavList>
         <Navigation
+        authUser={authUser}
           onClickLogin={onClickLogin}
           onClickRegister={onClickRegister}
         />

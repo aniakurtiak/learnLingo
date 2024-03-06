@@ -1,19 +1,7 @@
 import styled from 'styled-components';
-import { ReactComponent as Heart } from '../../icons/heart.svg';
+import { FiHeart } from 'react-icons/fi';
 
-export const CardList = styled.ul`
-  margin-top: 53px;
-`;
 
-export const CardItem = styled.li`
-  min-width: 320px;
-  max-width: 1184px;
-  padding: 24px;
-  display: flex;
-  gap: 48px;
-  align-items: flex-start;
-  margin-bottom: 53px;
-`;
 export const ImgContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -57,7 +45,6 @@ export const InfoContainer = styled.div`
 
 export const InfoHeader = styled.div`
   display: flex;
-  
   justify-content: space-between;
 `;
 
@@ -105,11 +92,48 @@ export const Price = styled.span`
   color: #38cd3e;
 `;
 
-export const HeartBtn = styled(Heart)`
+
+export const HeartBtn = styled.button`
 margin-left: 48px;
 display: flex;
 justify-content: flex-end;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  background-color: transparent;
 `;
+
+export const Heart = styled(FiHeart)`
+  fill: none;
+  width: 26px;
+  height: 26px;
+  transition: fill scale 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    scale: 1.1;
+  }
+  &:focus {
+    fill: #3470FF;
+    color: #3470FF;
+   
+  }
+`;
+
+export const HeartDel = styled(FiHeart)`
+  fill: ${({ theme }) => theme.primaryYellow};
+  color: ${({ theme }) => theme.primaryYellow};
+  width: 26px;
+  height: 26px;
+  transition: fill scale 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover{
+    scale: 1.1;
+  }
+  &:focus {
+    color: white;
+    fill: none;
+    
+  }
+`;
+
 
 export const NameTitle = styled.h2`
 font-weight: 500;
@@ -229,3 +253,5 @@ margin-top: 32px;
   background: ${({theme}) => theme.primaryLightYellow};
 }
 `;
+
+

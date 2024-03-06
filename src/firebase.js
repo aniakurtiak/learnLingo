@@ -34,4 +34,7 @@ const database = getDatabase(app);
 
 const dbRef = ref(getDatabase());
 
-export { app, googleAuthProvider, database, auth, dbRef };
+const currentUser = auth.currentUser;
+
+
+export { app, googleAuthProvider, currentUser,database, auth, dbRef };
