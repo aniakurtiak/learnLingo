@@ -4,12 +4,28 @@ import { lazy, useEffect, useState } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './firebase';
 import { PrivateRoute } from 'components/navigation/PrivateRoute';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectAuthUser } from './redux/selectors';
+import { setAuthUser } from './redux/authUser/authSlice';
 
 const Home = lazy(() => import('./pages/Home/Home'));
 const Teachers = lazy(() => import('./pages/Teachers/Teachers'));
 const Favorites = lazy(() => import('./pages/Favorites/Favorites'));
 
 export const App = () => {
+// const authUser = useSelector(selectAuthUser);
+//   const dispatch = useDispatch();
+
+//   useEffect(() => {
+//     const unsubscribe = onAuthStateChanged(auth, (user) => {
+//       dispatch(setAuthUser(user));
+//     });
+
+//     return () => {
+//       unsubscribe();
+//     };
+//   }, [dispatch]);
+
   const [authUser, setAuthUset] = useState(auth.currentUser);
 
   useEffect(() => {
@@ -29,6 +45,7 @@ export const App = () => {
     console.log(authUser.displayName);
   }
 
+  
   return (
     <Routes>
       <Route path="/" element={<Layout authUser={authUser} />}>

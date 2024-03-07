@@ -16,7 +16,10 @@ export const AuthNavOut = () => {
 
   const handleLogOUt = () => {
     signOut(auth)
-      .then(() => console.log('success'))
+      .then(() => {
+        localStorage.removeItem('favorites');
+        console.log('success')
+      })
       .catch(e => console.log(e));
   };
 

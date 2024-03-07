@@ -5,7 +5,7 @@ import {
   selectError,
   selectIsLoading,
   selectTeachers,
-} from '../../redux/teachers/selectors';
+} from '../../redux/selectors';
 import { TeachersContainer } from './Teachers.styled';
 import { CardList } from 'components/CardList/CardList';
 

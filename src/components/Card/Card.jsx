@@ -35,17 +35,17 @@ import { ReactComponent as Star } from '../../icons/star.svg';
 import { Modal } from 'components/Modal/Modal';
 import { BookTrialModal } from 'components/BookTrialModal/BookTrialModal';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectFavorites } from '../../redux/teachers/selectors';
-import {
-  addFavorites,
-  deleteFavorites,
-} from '../../redux/teachers/teachersSlice';
+import { selectAuthUser, selectFavorites } from '../../redux/selectors';
+import { addFavorite, deleteFavorite, fetchFavorites } from '../../redux/favorites/operations';
 
-
-export const Card = ({ teacher, authUser }) => {
+export const Card = ({ teacher, authUser}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [expandedTeacherId, setExpandedTeacherId] = useState(null);
   const [selectedTeacher, setSelectedTeacher] = useState(null);
+  const dispatch = useDispatch();
+  const favorites = useSelector(selectFavorites);
+  // const authUser = useSelector(selectAuthUser)
+
   const toggleModal = () => {
     setIsOpen(prevState => !prevState);
   };
@@ -66,25 +66,71 @@ export const Card = ({ teacher, authUser }) => {
   const getButtonText = teacherId =>
     expandedTeacherId === teacherId ? 'Hide more' : 'Read More';
 
-  const dispatch = useDispatch();
-  const favorites = useSelector(selectFavorites);
 
+    
+    // const isFavorite = favorites && favorites.some(favorTeacher => favorTeacher.id === teacher.id);
 
-  const isFavorite = favorites.find(
-    favorTeacher => favorTeacher.id === teacher.id
-  );
-
-   const onSwitchFavorite = () => {
-    if (authUser) {
-      if (!isFavorite) {
-        dispatch(addFavorites(teacher));
+    const isFavorite = favorites && favorites.some(favorTeacher => favorTeacher && favorTeacher.id === teacher.id);
+    
+    
+const onSwitchFavorite = () => {
+      if (authUser) {
+        if (!isFavorite) {
+          dispatch(addFavorite({ userId: authUser.uid, teacher }));
+        } else {
+          dispatch(deleteFavorite({ userId: authUser.uid, teacherId: teacher.id }));
+        }
       } else {
-        dispatch(deleteFavorites(teacher));
+        console.log('Please register to add teachers to favorites.');
       }
-    } else {
-      console.log('Please register to add teachers to favorites.');
-    }
-  };
+    };
+  
+    //  const onSwitchFavorite = () => {
+    //   if (authUser) {
+    //     if (!isFavorite) {
+    //       dispatch(addFavorite(teacher));
+    //     } else {
+    //       dispatch(deleteFavorite(teacher));
+    //     }
+    //   } else {
+    //     console.log('Please register to add teachers to favorites.');
+    //   }
+    // };
+  
+
+
+
+  // const isFavorite = favorites.find(
+  //   favorTeacher => favorTeacher.id === teacher.id
+  // );
+
+  // const updatedFavorites = (userId, updatedFavorites) => {
+  //   localStorage.setItem(`favorites_${userId}`, JSON.stringify(updatedFavorites));
+  // };
+  
+  // const onSwitchFavorite = () => {
+  //   if (authUser) {
+  //     const userId = authUser.uid;
+  
+  //     // Отримуємо улюблені картки для поточного користувача
+  //     const userFavorites = JSON.parse(localStorage.getItem(`favorites_${userId}`)) || [];
+  
+  //     if (!isFavorite) {
+  //       // Додаємо улюблену картку
+  //       const updated = [...userFavorites, teacher];
+  //       dispatch(addFavorites(teacher));
+  //       updatedFavorites(userId, updated);
+  //     } else {
+  //       // Видаляємо улюблену картку
+  //       const updated = userFavorites.filter(favorTeacher => favorTeacher.id !== teacher.id);
+  //       dispatch(deleteFavorites(teacher));
+  //       updatedFavorites(userId, updated);
+  //     }
+  //   } else {
+  //     console.log('Please register to add teachers to favorites.');
+  //   }
+  // };
+
 
   return (
     <>
@@ -120,7 +166,7 @@ export const Card = ({ teacher, authUser }) => {
             <li>
               {' '}
               <HeartBtn type="button" onClick={onSwitchFavorite}>
-                {isFavorite ? <HeartDel /> : <Heart />}
+                {isFavorite && authUser? <HeartDel /> : <Heart />}
               </HeartBtn>
             </li>
           </DataList>
@@ -167,6 +213,7 @@ export const Card = ({ teacher, authUser }) => {
                         alt="avatar"
                         width="44"
                         height="44"
+                        loading="lazy"
                       />
                       <ReviewRating>
                         <p>{review.reviewer_name}</p>

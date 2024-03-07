@@ -23,7 +23,8 @@ export const Login = ({close}) => {
     signInWithEmailAndPassword(auth, email, password)
       .then(userCredential => {
         const user = userCredential.user;
-        console.log('User login successfully:', user);
+        const token = user.uid;
+        console.log(token);
         close();
       })
       .catch(err => {

@@ -3,7 +3,6 @@ import { fetchTeachers } from './operations';
 
 const initialState = {
   items: [],
-  favorites: [],
   isLoading: false,
   error: null,
 };
@@ -19,16 +18,20 @@ const handleRejected = (state, action) => {
 export const teachersSlice = createSlice({
   name: 'teachers',
   initialState,
-  reducers: {
-    addFavorites(state, action) {
-      state.favorites.push(action.payload);
-    },
-    deleteFavorites(state, action) {
-      state.favorites = state.favorites.filter(
-        teacher => teacher.id !== action.payload.id
-      );
-    },
-  },
+  // reducers: {
+  //   addFavorites(state, action) {
+  //     state.favorites.push(action.payload);
+  //   },
+  //   // const { id, userId } = action.payload;
+  //   // state.favorites.push({ ...action.payload, userId });
+  //   // },
+  //   deleteFavorites(state, action) {
+  //     state.favorites = state.favorites.filter(
+  //       teacher => teacher.id !== action.payload.id
+  //       // teacher => teacher.id !== action.payload.id || teacher.userId !== action.payload.userId
+  //     );
+  //   },
+  // },
   extraReducers: builder => {
     builder
       .addCase(fetchTeachers.pending, handlePending)
@@ -41,6 +44,6 @@ export const teachersSlice = createSlice({
   },
 });
 
-export const { addFavorites, deleteFavorites } = teachersSlice.actions;
+// export const { addFavorites, deleteFavorites } = teachersSlice.actions;
 
 export const teacherReducer = teachersSlice.reducer;

@@ -8,9 +8,10 @@ export const CardList = ({authUser, teachers}) => {
   return (
    <ListWrapper>
         {teachers &&
+          Array.isArray(teachers) &&
             teachers.map(teacher => (
-            <CardItem key={teacher.id}>
-              <Card authUser={authUser} teacher = {teacher} />
+              <CardItem key={teacher?.id}>
+      {teacher && <Card authUser={authUser} teacher={teacher} />}
             </CardItem>
              ))}
    </ListWrapper>

@@ -6,12 +6,13 @@ import {
   Text,
   Title,
 } from 'components/Modal/Modal.styled';
-import { auth } from '../../firebase';
+import { auth, dbRef } from '../../firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { Formik } from 'formik';
 import { useState } from 'react';
 import * as Yup from 'yup';
 import { AuthProvider } from './AuthProvider';
+import { ref, set } from 'firebase/database';
 
 export const Register = ({close}) => {
   const [nameEntered, setNameEntered] = useState(false);
@@ -19,9 +20,9 @@ export const Register = ({close}) => {
   const [passwordEntered, setPasswordEntered] = useState(false);
 
   const handleSubmit = values => {
-    const { email, password } = values;
+    const {email, password } = values;
 
-    createUserWithEmailAndPassword(auth, email, password)
+    createUserWithEmailAndPassword(auth,  email, password)
       .then(userCredential => {
         const user = userCredential.user;
         console.log('User registered successfully:', user);
