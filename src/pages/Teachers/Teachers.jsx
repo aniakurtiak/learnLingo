@@ -8,6 +8,7 @@ import {
 } from '../../redux/selectors';
 import { TeachersContainer } from './Teachers.styled';
 import { CardList } from 'components/CardList/CardList';
+import { fetchFavorites } from '../../redux/favorites/operations';
 
 const Teacher = ({authUser}) => {
   const dispatch = useDispatch();
@@ -17,7 +18,11 @@ const Teacher = ({authUser}) => {
 
   useEffect(() => {
     dispatch(fetchTeachers());
-  }, [dispatch]);
+    // Зчитуємо стан favorites при завантаженні сторінки teachers
+    if (authUser && authUser.uid) {
+      dispatch(fetchFavorites(authUser.uid));
+    }
+  }, [dispatch, authUser]);
 
   return (
     <TeachersContainer>
