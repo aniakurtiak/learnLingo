@@ -6,7 +6,6 @@ import { teacherReducer } from "./teachers/teachersSlice";
 
 export const store = configureStore({
     reducer: {
-    // auth: authReducer,
         teachers: teacherReducer,
         favorites: favrotiesReducer,
     },

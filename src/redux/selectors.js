@@ -4,10 +4,10 @@ const selectIsLoading = state => state.teachers.isLoading;
 
 const selectError = state => state.teachers.error;
 
-// const selectAuthUser = state => state.auth.authUser;
-
 const selectFavorites = state => state.favorites.items;
 
-const selectVisibleItems = (state) => state.loadMore.visibleItems;
+const selectIsLoadingFav = state => state.favorites.isLoading;
 
-export {selectTeachers, selectIsLoading, selectError, selectFavorites, selectVisibleItems};
+const selectErrorFav = state => state.favorites.error;
+
+export {selectTeachers, selectIsLoading, selectError, selectFavorites, selectIsLoadingFav, selectErrorFav};

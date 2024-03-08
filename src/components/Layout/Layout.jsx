@@ -12,35 +12,24 @@ import { Login } from 'components/auth/Login';
 import { Register } from 'components/auth/Register';
 import { Navigation } from 'components/navigation/Navigation';
 import { Toaster } from 'react-hot-toast';
-// import { BookTrialModal } from 'components/BookTrialModal/BookTrialModal';
 
 export const Layout = ({authUser}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [loginModal, setLoginModal] = useState(false);
   const [registerModal, setRegisterModal] = useState(false);
-  // const [bookModal, setBookModal] = useState(false);
 
   const toggleModal = () => {
     setIsOpen(prevState => !prevState);
   };
 
-  // function onClickBookModal() {
-  //   setRegisterModal(false);
-  //   setLoginModal(false);
-  //   setBookModal(true);
-  //   toggleModal();
-  // }
-
   function onClickLogin() {
     setRegisterModal(false);
     setLoginModal(true);
-    // setBookModal(false)
     toggleModal();
   }
   function onClickRegister() {
     setLoginModal(false);
     setRegisterModal(true);
-    // setBookModal(false)
     toggleModal();
   }
 
@@ -68,8 +57,7 @@ export const Layout = ({authUser}) => {
         />
       </HeaderContainer>
       <Suspense>
-        <Outlet />
-        {/* <Outlet onClickBookModal = {onClickBookModal} /> */}
+        <Outlet  />
       </Suspense>
       <Toaster position="top-right" reverseOrder={false} />
 
@@ -77,7 +65,6 @@ export const Layout = ({authUser}) => {
         <Modal toggleModal={toggleModal}>
           {loginModal && <Login close={close} />}
           {registerModal && <Register close={close} />}
-          {/* {bookModal && <BookTrialModal close={close}/>} */}
         </Modal>
       )}
     </LayoutWrap>

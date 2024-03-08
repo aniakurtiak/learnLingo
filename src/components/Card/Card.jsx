@@ -48,7 +48,6 @@ export const Card = ({ teacher, authUser }) => {
   const [selectedTeacher, setSelectedTeacher] = useState(null);
   const dispatch = useDispatch();
   const favorites = useSelector(selectFavorites);
-  // const authUser = useSelector(selectAuthUser)
 
   const toggleModal = () => {
     setIsOpen(prevState => !prevState);

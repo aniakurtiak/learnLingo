@@ -11,7 +11,7 @@ import { CardList } from 'components/CardList/CardList';
 import { fetchFavorites } from '../../redux/favorites/operations';
 import { MyLoader } from 'components/MyLoader/MyLoader';
 
-const Teacher = ({ authUser }) => {
+const Teacher = ({ authUser}) => {
   const dispatch = useDispatch();
   const teachers = useSelector(selectTeachers);
   const isLoading = useSelector(selectIsLoading);
@@ -24,7 +24,6 @@ const Teacher = ({ authUser }) => {
 
   useEffect(() => {
     dispatch(fetchTeachers());
-    // Зчитуємо стан favorites при завантаженні сторінки teachers
     if (authUser && authUser.uid) {
       dispatch(fetchFavorites(authUser.uid));
     }

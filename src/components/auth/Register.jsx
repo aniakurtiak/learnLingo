@@ -6,13 +6,13 @@ import {
   Text,
   Title,
 } from 'components/Modal/Modal.styled';
-import { auth, dbRef } from '../../firebase';
+import { auth} from '../../firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { Formik } from 'formik';
 import { useState } from 'react';
 import * as Yup from 'yup';
 import { AuthProvider } from './AuthProvider';
-import { ref, set } from 'firebase/database';
+import toast from 'react-hot-toast';
 
 export const Register = ({close}) => {
   const [nameEntered, setNameEntered] = useState(false);
@@ -24,12 +24,10 @@ export const Register = ({close}) => {
 
     createUserWithEmailAndPassword(auth,  email, password)
       .then(userCredential => {
-        const user = userCredential.user;
-        console.log('User registered successfully:', user);
         close();
       })
       .catch(err => {
-        console.error('Registration error:', err.message);
+        toast.error(" Sorry, Something went wrong! Try agani later!")
       });
   };
 

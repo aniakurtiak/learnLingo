@@ -13,17 +13,6 @@ const firebaseConfig = {
     'https://learnlingo-7d407-default-rtdb.europe-west1.firebasedatabase.app/',
 };
 
-
-// const firebaseConfig = {
-//   apiKey: process.env.REACT_APP_API_KEY,
-//   authDomain: "learnlingocom.firebaseapp.com",
-//   projectId: "learnlingocom",
-//   storageBucket: "learnlingocom.appspot.com",
-//   messagingSenderId: "143061014194",
-//   appId: "1:143061014194:web:8170b1ba93701eb8631bab",
-//   measurementId: "G-YDY41SJS74"
-// };
-
 const app = initializeApp(firebaseConfig);
 
 const googleAuthProvider = new GoogleAuthProvider();
@@ -34,7 +23,5 @@ const database = getDatabase(app);
 
 const dbRef = ref(getDatabase());
 
-const currentUser = auth.currentUser;
 
-
-export { app, googleAuthProvider, currentUser,database, auth, dbRef };
+export { app, googleAuthProvider, database, auth, dbRef };

@@ -12,15 +12,9 @@ import {
 
 export const AuthNavOut = () => {
   const currentUser = auth.currentUser;
-  console.log(currentUser.displayName);
 
   const handleLogOUt = () => {
     signOut(auth)
-      .then(() => {
-        localStorage.removeItem('favorites');
-        console.log('success')
-      })
-      .catch(e => console.log(e));
   };
 
   return (

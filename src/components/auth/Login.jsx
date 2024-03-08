@@ -12,6 +12,7 @@ import * as Yup from 'yup';
 import { AuthProvider } from 'components/auth/AuthProvider';
 import { signInWithEmailAndPassword} from 'firebase/auth';
 import { auth} from '../../firebase';
+import toast from 'react-hot-toast';
 
 export const Login = ({close}) => {
   const [emailEntered, setEmailEntered] = useState(false);
@@ -22,16 +23,12 @@ export const Login = ({close}) => {
 
     signInWithEmailAndPassword(auth, email, password)
       .then(userCredential => {
-        const user = userCredential.user;
-        const token = user.uid;
-        console.log(token);
         close();
       })
       .catch(err => {
-        console.log("SORRY, COULDN'T FIND YOUR ACCOUNT:", err.message);
+        toast.error(" SORRY, COULDN'T FIND YOUR ACCOUNT")
       });
   };
-
 
 
   const LoginSchema = Yup.object().shape({

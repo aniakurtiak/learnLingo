@@ -1,38 +1,31 @@
 import { useDispatch, useSelector } from "react-redux"
-import { FavoritesContainer } from "./Favorites.styled"
-import { selectFavorites } from "../../redux/selectors"
+import { FavoritesContainer, Text } from "./Favorites.styled"
+import { selectErrorFav, selectFavorites, selectIsLoadingFav } from "../../redux/selectors"
 import { CardList } from "components/CardList/CardList"
 import { useEffect } from "react"
 import { fetchFavorites } from "../../redux/favorites/operations"
+import { MyLoader } from "components/MyLoader/MyLoader"
 
 const Favorites = ({ authUser }) => {
   const dispatch = useDispatch();
   const favorites = useSelector(selectFavorites);
+const isLoadingFav = useSelector(selectIsLoadingFav);
+const errorFav = useSelector(selectErrorFav);
 
   useEffect(() => {
-    const fetchUserFavorites = async () => {
-      if (authUser && authUser.uid) {
-        const userId = authUser.uid;
-        console.log('userId before dispatch:', userId);
-        try {
-          dispatch(fetchFavorites(userId));
-        } catch (error) {
-          console.error('Error fetching favorites:', error);
-        }
-      } else {
-        console.log('Користувач не увійшов в систему або authUser є undefined');
-      }
-    };
-
-    fetchUserFavorites();
-  }, [dispatch, authUser]);
-
-  console.log('Улюблені в компоненті:', favorites);
-
+    if (authUser && authUser.uid) {
+    dispatch(fetchFavorites(authUser.uid));
+  }
+}, [dispatch, authUser]);
 
 return (
     <FavoritesContainer>
-       <CardList teachers = {favorites} authUser={authUser}/>
+          {isLoadingFav && !errorFav && <MyLoader/>}
+    {favorites.length > 0 ? (
+        <CardList teachers={favorites} authUser={authUser} />
+      ) : (
+        <Text>Favorite teachers haven't been selected yet</Text>
+      )}
     </FavoritesContainer>
 )
 }

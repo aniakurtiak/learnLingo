@@ -21,12 +21,14 @@ import {
 import { TeacherPhoto } from 'components/Card/Card.styled';
 import * as Yup from 'yup';
 import {Formik } from 'formik';
+import toast from 'react-hot-toast';
 
 export const BookTrialModal = ({ teacher, close }) => {
   const [nameEntered, setNameEntered] = useState(false);
   const [emailEntered, setEmailEntered] = useState(false);
   const [phoneEntered, setPhoneEntered] = useState(false);
   const BookLessonSchema = Yup.object().shape({
+    picked: Yup.string().required('Please select a reason for learning English'),
     fullname: Yup.string()
       .min(2, 'Too Short!')
       .max(20, 'Too Long!')
@@ -34,9 +36,14 @@ export const BookTrialModal = ({ teacher, close }) => {
     email: Yup.string().email('Invalid email').required('Required'),
     phoneNuber: Yup.number()
       .min(8, 'Too Short!')
-      .max(12, 'Too Long!')
       .required('Required'),
   });
+
+const handleSubmit = () => {
+  toast.success('Сompleted successfully!')
+  close()
+
+}
 
   return (
     <BookTrailContainer>
@@ -68,7 +75,7 @@ export const BookTrialModal = ({ teacher, close }) => {
           email: '',
           phoneNuber: '',
         }}
-        // onSubmit={handleSubmit}
+        onSubmit={handleSubmit}
         validationSchema={BookLessonSchema}
       >
         {({ values, errors, touched, handleChange, handleBlur }) => (
@@ -94,6 +101,7 @@ export const BookTrialModal = ({ teacher, close }) => {
               <RadioBtnField type="radio" name="picked" value="Culture, travel or hobby" />
               Culture, travel or hobby
             </RadioBtnLabel>
+            <ErrMsg name="picked" component="div" />
           </RadioBlock>
             <FieldStyle
               name="fullname"
