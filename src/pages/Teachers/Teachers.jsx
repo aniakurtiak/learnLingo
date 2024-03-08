@@ -6,9 +6,10 @@ import {
   selectIsLoading,
   selectTeachers,
 } from '../../redux/selectors';
-import { TeachersContainer } from './Teachers.styled';
+import { LoadMoreBtn, TeachersContainer } from './Teachers.styled';
 import { CardList } from 'components/CardList/CardList';
 import { fetchFavorites } from '../../redux/favorites/operations';
+import { MyLoader } from 'components/MyLoader/MyLoader';
 
 const Teacher = ({ authUser }) => {
   const dispatch = useDispatch();
@@ -31,10 +32,10 @@ const Teacher = ({ authUser }) => {
 
   return (
     <TeachersContainer>
-      {isLoading && !error && <b>Loading...</b>}
+      {isLoading && !error && <MyLoader/>}
       <CardList authUser={authUser} teachers={teachers.slice(0, visibleTeachers)} />
       {teachers.length > visibleTeachers && (
-        <button onClick={loadMoreTeachers}>Load More</button>
+        <LoadMoreBtn onClick={loadMoreTeachers}>Load More</LoadMoreBtn>
       )}
     </TeachersContainer>
   );

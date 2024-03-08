@@ -11,6 +11,7 @@ import { Modal } from 'components/Modal/Modal';
 import { Login } from 'components/auth/Login';
 import { Register } from 'components/auth/Register';
 import { Navigation } from 'components/navigation/Navigation';
+import { Toaster } from 'react-hot-toast';
 // import { BookTrialModal } from 'components/BookTrialModal/BookTrialModal';
 
 export const Layout = ({authUser}) => {
@@ -70,6 +71,7 @@ export const Layout = ({authUser}) => {
         <Outlet />
         {/* <Outlet onClickBookModal = {onClickBookModal} /> */}
       </Suspense>
+      <Toaster position="top-right" reverseOrder={false} />
 
       {isOpen && (
         <Modal toggleModal={toggleModal}>
