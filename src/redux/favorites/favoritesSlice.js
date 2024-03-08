@@ -37,7 +37,7 @@ export const favoritesSlice = createSlice({
       .addCase(deleteFavorite.fulfilled, (state, action) => {
         console.log('deleteFavorite.fulfilled payload:', action.payload);
         state.isLoading = false;
-        state.items = state.items.filter((item) => item.id !== action.payload.teacherId);
+        state.items = state.items.filter((item) => item.id !== (action.payload?.teacherId));
       })
       .addCase(deleteFavorite.rejected, handleRejected);
   },
