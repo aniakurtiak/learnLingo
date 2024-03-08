@@ -3,19 +3,30 @@ import { ReactComponent as Logo } from '../../icons/ukraine.svg';
 import { Link } from 'react-router-dom';
 
 export const LayoutWrap = styled.div`
-  min-width: 320px;
+ min-width: 320px;
   max-width: 1440px;
   padding-top: 20px;
-  margin: 0 auto;
+  padding-left:15px;
+  padding-right: 15px;
+
 `;
 
 export const HeaderContainer = styled.header`
-  width: 100%;
-  display: flex;
-  padding-left: 128px;
-  padding-right: 128px;
-  align-items: center;
-  justify-content: space-between;
+
+display: flex;
+flex-wrap: wrap;
+gap: 20px;
+align-items: center;
+justify-content: center;
+
+
+@media screen and (min-width: 768px) {
+  max-width: 1184px;
+  margin: 0 auto;
+  justify-content: space-between;;
+  gap: 0px;
+}
+ 
 `;
 
 export const LogoSvg = styled(Logo)`
