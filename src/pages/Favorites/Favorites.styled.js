@@ -1,8 +1,11 @@
 import styled from 'styled-components';
 
 export const FavoritesContainer = styled.div`
-  padding-left: 128px;
-  padding-right: 128px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f8f8;
 `;
 
 export const Text = styled.p`

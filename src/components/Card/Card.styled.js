@@ -199,6 +199,11 @@ export const BtnMore = styled.button`
   text-decoration-skip-ink: none;
   background: transparent;
   margin-top: 16px;
+
+  &:hover {
+    scale: 1.1;
+   color:  ${({ theme }) => theme.primaryYellow}
+  }
 `;
 
 export const ExpText = styled.p`

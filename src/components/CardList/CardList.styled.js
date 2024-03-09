@@ -15,12 +15,15 @@ export const CardItem = styled.li`
   padding: 24px;
   display: flex;
 flex-wrap: wrap;
+border-radius: 24px;
+background: #fff;
 
 
-  @media screen and (min-width: 1140px) {
-    gap: 48px;
-    align-items: flex-start;
-    margin-bottom: 53px;
+@media screen and (min-width: 1140px) {
+  gap: 48px;
+  align-items: flex-start;
+  margin-bottom: 53px;
   flex-wrap: nowrap;
+  width: 1184px;
 }
 `;

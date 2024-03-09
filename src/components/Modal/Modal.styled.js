@@ -79,6 +79,11 @@ height: 54px;
   color: ${({theme}) => theme.primaryBlack};
 }
 
+&:hover{
+  outline: none;
+ border-color: ${({theme}) => theme.primaryYellow};
+}
+
 &:focus {
   outline: none;
  border-color: ${({theme}) => theme.primaryYellow};

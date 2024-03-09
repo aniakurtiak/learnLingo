@@ -47,6 +47,11 @@ export const LogBtn = styled.button`
   display: flex;
   align-items: center;
   gap: 8px;
+
+  &:hover {
+    scale: 1.1;
+   color:  ${({ theme }) => theme.primaryYellow}
+  }
 `;
 
 export const LogInSvg = styled(LogIn)`
