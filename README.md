@@ -17,17 +17,21 @@ and setting additional features refer to the [documentation](https://facebook.gi
 
 ## Pages
 
-### ![Home Page](./assets/image.jpg)
+### Home Page
+![Home Page](./assets/image.jpg)
 Displays company advantages.
 Includes a link to start using the application, redirecting users to the "Teachers" page.
 Implements styling with variations in color palettes or a prototype for uniqueness.
 
-### ![Teachers Page](./assets/teachers1.jpg)
+### Teachers Page
+![Teachers Page](./assets/teachers1.jpg)
 Renders teacher cards with basic information.
 Allows users to load more teacher cards dynamically.
 Implements actions such as adding a teacher to favorites, expanding detailed information, and booking a trial lesson.
 
-### ![Favorites Page](./assets/favorites1.jpg)
+
+### Favorites Page
+![Favorites Page](./assets/favorites1.jpg)
 A private page accessible to authenticated users.
 Displays teacher cards that the user has added to favorites.
 Styled similarly to the "Teachers" page.
