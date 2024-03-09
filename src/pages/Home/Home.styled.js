@@ -151,7 +151,7 @@ export const ImgMacYellSvg = styled(MacYellSvg)`
 // ------------BENEFITS--------------------------
 
 export const BenefitsContainer = styled.div`
-  background-image: url(${require('../../icons/rectangle-yellow-2.png')});
+  background-image: url(${require('../../icons/rectangle-yellow3.png')});
   margin-top: 24px;
   width: 100%;
   height: 100%;
