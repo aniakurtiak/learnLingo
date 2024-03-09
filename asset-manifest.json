@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/learnLingo/static/css/main.cd2e038f.css",
-    "main.js": "/learnLingo/static/js/main.ef6a169b.js",
+    "main.js": "/learnLingo/static/js/main.927c308d.js",
     "static/js/437.0c5f76f5.chunk.js": "/learnLingo/static/js/437.0c5f76f5.chunk.js",
     "static/js/640.9792bc3b.chunk.js": "/learnLingo/static/js/640.9792bc3b.chunk.js",
     "static/js/786.86d1c033.chunk.js": "/learnLingo/static/js/786.86d1c033.chunk.js",
     "static/js/618.4fb1dc1d.chunk.js": "/learnLingo/static/js/618.4fb1dc1d.chunk.js",
-    "static/js/750.0ba7d5de.chunk.js": "/learnLingo/static/js/750.0ba7d5de.chunk.js",
+    "static/js/750.a69a4683.chunk.js": "/learnLingo/static/js/750.a69a4683.chunk.js",
     "static/media/girl.svg": "/learnLingo/static/media/girl.185dee334a8a98a1083cb04a4353cb67.svg",
     "static/media/iMac-yellow.svg": "/learnLingo/static/media/iMac-yellow.44161f5b1543242e79ab1df392ac44ab.svg",
     "index.html": "/learnLingo/index.html",
@@ -18,15 +18,15 @@
     "static/media/log-out.svg": "/learnLingo/static/media/log-out.dcacb95357c0ea1561f08007afe30794.svg",
     "static/media/close.svg": "/learnLingo/static/media/close.79c2124edd945aaf110064907aeca72b.svg",
     "main.cd2e038f.css.map": "/learnLingo/static/css/main.cd2e038f.css.map",
-    "main.ef6a169b.js.map": "/learnLingo/static/js/main.ef6a169b.js.map",
+    "main.927c308d.js.map": "/learnLingo/static/js/main.927c308d.js.map",
     "437.0c5f76f5.chunk.js.map": "/learnLingo/static/js/437.0c5f76f5.chunk.js.map",
     "640.9792bc3b.chunk.js.map": "/learnLingo/static/js/640.9792bc3b.chunk.js.map",
     "786.86d1c033.chunk.js.map": "/learnLingo/static/js/786.86d1c033.chunk.js.map",
     "618.4fb1dc1d.chunk.js.map": "/learnLingo/static/js/618.4fb1dc1d.chunk.js.map",
-    "750.0ba7d5de.chunk.js.map": "/learnLingo/static/js/750.0ba7d5de.chunk.js.map"
+    "750.a69a4683.chunk.js.map": "/learnLingo/static/js/750.a69a4683.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cd2e038f.css",
-    "static/js/main.ef6a169b.js"
+    "static/js/main.927c308d.js"
   ]
 }
