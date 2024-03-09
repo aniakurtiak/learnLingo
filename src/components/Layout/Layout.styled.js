@@ -49,6 +49,11 @@ export const NavLinkLogo = styled(Link)`
   letter-spacing: -0.02em;
   color: ${({ theme }) => theme.primaryBlack};
   align-items: center;
+
+  &:hover {
+    scale: 1.1;
+   color:  ${({ theme }) => theme.primaryYellow}
+  }
 `;
 
 
