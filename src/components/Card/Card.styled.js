@@ -50,10 +50,15 @@ export const InfoContainer = styled.div`
 
 export const InfoHeader = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
 margin-top: 20px;
-flex-wrap: nowrap;
+
   
+@media screen and (min-width: 768px) {
+  flex-direction: row;
+}
+
   @media screen and (min-width: 1140px) {
   margin-top: 0;
 
@@ -66,10 +71,12 @@ export const Text = styled.p`
   font-size: 16px;
   line-height: 1.5;
   color: #8a8a89;
+  text-align: center;
 `;
 
 export const DataList = styled.ul`
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 4px;
@@ -91,8 +98,13 @@ export const DataItem = styled.li`
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
-  border-right: 1px solid rgba(18, 20, 23, 0.2);
   padding-right: 4px;
+ 
+  
+  @media screen and (min-width: 768px) {
+
+    padding-right: 16px;
+    border-right: 1px solid rgba(18, 20, 23, 0.2);
   
   &:last-child {
     border-right: none;
@@ -103,9 +115,6 @@ export const DataItem = styled.li`
     border-right: none;
     padding-right: 0;
   }
-  
-  @media screen and (min-width: 1140px) {
-    padding-right: 16px;
   
 }
 `;
@@ -162,6 +171,11 @@ export const NameTitle = styled.h2`
   font-size: 24px;
   line-height: 1;
   margin-top: 8px;
+  text-align: center;
+
+  @media screen and (min-width: 768px) {
+    text-align: start;
+  }
 `;
 
 export const ListInfo = styled.ul`
@@ -237,6 +251,7 @@ export const ReviewRating = styled.div`
 
 export const LevelList = styled.ul`
   display: flex;
+  flex-wrap: wrap;
   margin-top: 32px;
   gap: 8px;
 `;

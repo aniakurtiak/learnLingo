@@ -6,7 +6,6 @@ export const TeachersContainer = styled.div`
   justify-content: center;
   align-items: center;
   background-color: #f8f8f8;
-  
 `;
 
 export const LoadMoreBtn = styled.button`
