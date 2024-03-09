@@ -15,7 +15,6 @@ export const NavList = styled.ul`
   gap: 8px;
 
   @media screen and (min-width: 1140px) {
-
   gap: 16px;
 }
 

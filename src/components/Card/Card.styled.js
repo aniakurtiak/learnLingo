@@ -157,11 +157,6 @@ export const HeartDel = styled(FiHeart)`
   }
 `;
 
-export const Wrapper = styled.div`
-  display: flex;
- 
-`;
-
 export const NameTitle = styled.h2`
   font-weight: 500;
   font-size: 24px;
@@ -244,11 +239,11 @@ export const LevelList = styled.ul`
 export const LevelItem = styled.li`
   font-weight: 500;
   font-size: 14px;
-  line-height: 114%;
+  line-height: 1.4;
   border: 1px solid rgba(18, 20, 23, 0.2);
   border-radius: 35px;
   padding: 8px 12px;
-  height: 32px;
+  height: 100%;
 `;
 
 export const RatingBlock = styled.div`

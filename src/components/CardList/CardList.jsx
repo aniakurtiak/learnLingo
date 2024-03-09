@@ -2,7 +2,7 @@ import { Card } from 'components/Card/Card';
 import React from 'react'
 import { ListWrapper, CardItem } from './CardList.styled';
 
-export const CardList = ({authUser, teachers, close}) => {
+export const CardList = ({authUser, teachers}) => {
 
 
   return (
