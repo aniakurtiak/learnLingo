@@ -5,7 +5,7 @@
 
 ## Overview
 
-This project is a web application consisting of three pages: "Home," "Teachers," and "Favorites." The application showcases the benefits of the company, allows users to explore and filter teachers based on various criteria, and enables users to add their favorite teachers to a personalized list.
+This project is a web application consisting of three pages: "Home," "Teachers," and "Favorites." The application showcases the benefits of the company, enables users to add their favorite teachers to a personalized list.
 
 ## Technologies Used
 
