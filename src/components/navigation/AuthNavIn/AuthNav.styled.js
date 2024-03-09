@@ -91,4 +91,7 @@ export const NavLinkMenu = styled(NavLink)`
   &.active {
     color: ${({ theme }) => theme.primaryYellow};
   }
+  &:hover {
+    color: ${({ theme }) => theme.primaryYellow};
+  }
 `;

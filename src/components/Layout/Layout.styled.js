@@ -18,6 +18,7 @@ flex-wrap: wrap;
 gap: 20px;
 align-items: center;
 justify-content: center;
+margin-bottom: 30px;
 
 
 @media screen and (min-width: 768px) {
@@ -25,8 +26,8 @@ justify-content: center;
   margin: 0 auto;
   justify-content: space-between;;
   gap: 0px;
+  margin-bottom: 0;
 }
- 
 `;
 
 export const LogoSvg = styled(Logo)`

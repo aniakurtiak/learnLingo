@@ -1,7 +1,9 @@
 import { Rings } from "react-loader-spinner";
 
 
-export const MyLoader = () => (
+export const MyLoader = () => {
+  return (
+    <div style={{ display: 'flex', justifyContent: 'center', marginTop: '300px' }}>
     <Rings
       visible={true}
       height="150"
@@ -11,4 +13,7 @@ export const MyLoader = () => (
       wrapperStyle={{}}
       wrapperClass=""
     />
-);
+</div>
+  )
+
+}
