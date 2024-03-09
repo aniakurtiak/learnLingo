@@ -22,31 +22,29 @@ export const InfoContainer = styled.div`
 
 // ----------------MAIN TEXT------------------
 export const StartContainer = styled.div`
- border-radius: 30px;
- background: #f8f8f8;
- width: 100%;
- padding-left: 5px;
- max-width: 320px;
- padding-right: 5px;
- /* height: 450px; */
- display: flex;
- flex-direction: column;
- justify-content: center;
- align-items: center;
+  border-radius: 30px;
+  background: #f8f8f8;
+  width: 100%;
+  padding-left: 5px;
+  max-width: 320px;
+  padding-right: 5px;
+  /* height: 450px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
- 
- @media screen and (min-width: 767px) {
-/* width: 330px; */
+  @media screen and (min-width: 767px) {
+    /* width: 330px; */
   }
 
   @media screen and (min-width: 1400px) {
     min-width: 330px;
     max-width: 720px;
     height: 530px;
-     padding-left: 70px;
-     display: block;
-}
-
+    padding-left: 70px;
+    display: block;
+  }
 `;
 
 export const Title = styled.h1`
@@ -56,23 +54,19 @@ export const Title = styled.h1`
   font-size: 28px;
   margin-top: 50px;
   text-align: center;
-  
+
   @media screen and (min-width: 1400px) {
     max-width: 548px;
     margin-top: 105px;
     font-size: 48px;
     text-align: start;
-   
-  
-}
-
+  }
 `;
 export const Lang = styled.span`
   font-style: italic;
   font-weight: 400;
   background: ${({ theme }) => theme.lightYellow};
 `;
-
 
 export const Text = styled.p`
   font-weight: 400;
@@ -82,14 +76,11 @@ export const Text = styled.p`
   margin-top: 32px;
   margin-bottom: 64px;
   text-align: center;
-  
+
   @media screen and (min-width: 1400px) {
     width: 471px;
     text-align: start;
-  
-}
-
-  
+  }
 `;
 
 export const LinkStart = styled(Link)`
@@ -100,21 +91,20 @@ export const LinkStart = styled(Link)`
   padding: 16px 48px;
   color: ${({ theme }) => theme.primaryBlack};
   background: ${({ theme }) => theme.primaryYellow};
-margin-bottom: 20px;
-
+  margin-bottom: 20px;
 
   &:hover {
-  color: ${({ theme }) => theme.primaryYellow};
+    color: ${({ theme }) => theme.primaryYellow};
     background: ${({ theme }) => theme.lightYellow};
   }
 
   @media screen and (min-width: 1140px) {
-  font-size: 18px;
-  padding: 16px 88px;
-  width: 267px;
-  height: 60px;
-margin-bottom: 0;
-}
+    font-size: 18px;
+    padding: 16px 88px;
+    width: 267px;
+    height: 60px;
+    margin-bottom: 0;
+  }
 `;
 
 // -------------------IMAGE------------------------
@@ -127,22 +117,21 @@ export const ImageContainer = styled.div`
 
   @media screen and (min-width: 1140px) {
     width: 568px;
-  height: 530px;
-}
+    height: 530px;
+  }
 `;
 
 export const ImgGirlSvg = styled(GirlSvg)`
- left: 25%;
- width: 250px;
- margin-top: 50px;
- 
- @media screen and (min-width: 1140px) {
-   margin-left: 114px;
-   margin-top: 80px;
+  left: 25%;
+  width: 250px;
+  margin-top: 50px;
+
+  @media screen and (min-width: 1140px) {
+    margin-left: 114px;
+    margin-top: 80px;
     width: auto;
     height: auto;
-    
-}
+  }
 `;
 
 export const ImgMacYellSvg = styled(MacYellSvg)`
@@ -151,44 +140,44 @@ export const ImgMacYellSvg = styled(MacYellSvg)`
   top: 270px;
   z-index: 1;
   width: 250px;
-  
+
   @media screen and (min-width: 1140px) {
     top: 354px;
     left: 105px;
     width: auto;
-  
-}
+  }
 `;
 
 // ------------BENEFITS--------------------------
 
 export const BenefitsContainer = styled.div`
-    background-image: url(${require('../../icons/rectangle-yellow3.png')});
+  background-image: url(${require('../../icons/rectangle-yellow-2.png')});
   margin-top: 24px;
   width: 100%;
   height: 100%;
   background-size: contain;
   background-repeat: no-repeat;
-  padding: 30px;
-display: flex;
-justify-content: center;
-align-items: center;
-margin-bottom: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   
   @media screen and (min-width: 768px) {
     background-image: url(${require('../../icons/rectangle-yellow.png')});
     background-size: contain;
-    padding-top: 20px;
     height: 100%;
+padding: 25px;
+    margin-left: 0px;
   }
-  
+
   @media screen and (min-width: 1400px) {
     padding: 40px 122px 40px 123px;
     /* width: 1312px; */
     width: 100%;
     margin-left: 30px;
-}
-
+  }
 `;
 
 export const BenefitsList = styled.ul`
@@ -198,13 +187,12 @@ export const BenefitsList = styled.ul`
   align-items: center;
   justify-content: center;
   gap: 20px;
-  
+
   @media screen and (min-width: 768px) {
     justify-content: space-between;
     flex-direction: row;
     gap: 0;
-  
-}
+  }
 `;
 
 export const BenefitsItem = styled.li`
@@ -212,30 +200,27 @@ export const BenefitsItem = styled.li`
   gap: 16px;
   justify-content: center;
   align-items: center;
-
 `;
 
 export const Nubers = styled.p`
-font-weight: 500;
-line-height: 1.14;
-letter-spacing: -0.02em;
-font-size: 20px;
+  font-weight: 500;
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+  font-size: 20px;
 
-@media screen and (min-width: 1140px) {
-  font-size: 28px;
-  
-}
-
-`
+  @media screen and (min-width: 1140px) {
+    font-size: 28px;
+  }
+`;
 export const BenefitsText = styled.p`
-font-weight: 400;
-font-size: 14px;
-line-height: 1.29;
-letter-spacing: -0.02em;
-color: rgba(18, 20, 23, 0.7);
-white-space: pre-line;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.02em;
+  color: rgba(18, 20, 23, 0.7);
+  white-space: pre-line;
 `;
 
 export const NewLine = styled.span`
-display: block;
-`
+  display: block;
+`;
