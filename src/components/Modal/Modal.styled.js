@@ -15,17 +15,24 @@ export const OverLay = styled.div`
 
 export const ModalContainer = styled.div`
   position: absolute;
+  width: 290px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 64px;
-  width: 566px;
   overflow: auto;
   background-color: #ffffff;
   border-radius: 30px;
-   max-height: 100vh;
+  max-height: 100vh;
+  padding: 32px;
+  
+  @media screen and (min-width: 768px) {
+    width: 566px;
+    padding: 64px;
+
+   }
 
 `;
+
 
 export const BtnClose = styled.button`
   width: 32px;
@@ -49,10 +56,15 @@ export const BtnClose = styled.button`
 
 export const Title = styled.h2`
 font-weight: 500;
-font-size: 40px;
 line-height: 1.2;
 letter-spacing: -0.02em;
 margin-bottom: 20px;
+font-size: 30px;
+
+@media screen and (min-width: 768px) {
+  font-size: 40px;
+
+}
 `
 
 export const Text = styled.p`
@@ -72,8 +84,8 @@ export const FieldStyle = styled(Field)`
 border: 1px solid rgba(18, 20, 23, 0.1);
 border-radius: 12px;
 padding: 16px 18px;
-width: 438px;
 height: 54px;
+width: 100%;
 
 &::placeholder {
   color: ${({theme}) => theme.primaryBlack};
@@ -81,12 +93,19 @@ height: 54px;
 
 &:hover{
   outline: none;
- border-color: ${({theme}) => theme.primaryYellow};
+  border-color: ${({theme}) => theme.primaryYellow};
 }
 
 &:focus {
   outline: none;
- border-color: ${({theme}) => theme.primaryYellow};
+  border-color: ${({theme}) => theme.primaryYellow};
+}
+
+
+@media screen and (min-width: 768px) {
+  width: 438px;
+  
+  
 }
 `
 
@@ -100,7 +119,7 @@ export const BtnSubmit = styled.button`
 margin-top: 22px;
 border-radius: 12px;
 padding: 16px;
-width: 438px;
+width: 100%;
 height: 60px;
 background: ${({theme}) => theme.primaryYellow};
 font-weight: 700;
@@ -111,13 +130,18 @@ color: ${({theme}) => theme.primaryBlack};
 &:hover {
   background: ${({theme}) => theme.primaryLightYellow};
 }
+
+@media screen and (min-width: 768px) {
+  width: 438px;
+
+}
 `
 
 export const BtnSubmitGoogle = styled.button`
 margin-top: 18px;
 border-radius: 12px;
 padding: 16px;
-width: 438px;
+width: 100%;
 height: 60px;
 display: flex;
 align-items: center;
@@ -133,6 +157,11 @@ color: rgba(18, 20, 23, 0.8);
 &:hover {
   border-color: ${({theme}) => theme.primaryYellow};
 }
+@media screen and (min-width: 768px) {
+  width: 438px;
+  
+}
+
 `
 export const BtnGoogleSvg = styled(GoogleSvg)`
 width: 20px;

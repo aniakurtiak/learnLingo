@@ -170,10 +170,11 @@ export const NameTitle = styled.h2`
   font-weight: 500;
   font-size: 24px;
   line-height: 1;
-  margin-top: 8px;
   text-align: center;
-
+  margin-top: 20px;
+  
   @media screen and (min-width: 768px) {
+    margin-top: 8px;
     text-align: start;
   }
 `;
