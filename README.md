@@ -1,6 +1,6 @@
 # LearnLingo App
 
-[LearnLingo Website](./assets/image.jpg)
+![LearnLingo Website](./assets/image.jpg)
 
 
 ## Overview
@@ -10,24 +10,24 @@ This project is a web application consisting of three pages: "Home," "Teachers,"
 ## Technologies Used
 
 - React: The project is built using [Create React App](https://github.com/facebook/create-react-app).For acquaintance
-and setting additional features [refer to the documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-- [Firebase] (https://firebase.google.com/docs/reference): Firebase is used for authentication, real-time database, and data storage.
+and setting additional features refer to the [documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- [Firebase](https://firebase.google.com/docs/reference): Firebase is used for authentication, real-time database, and data storage.
 - [Formik & Yup](https://formik.org/): Formik is employed for form management, and Yup is used for form validation.
 - React Router: React Router is utilized for client-side routing within the application.
 
 ## Pages
 
-### [Home Page](./assets/image.jpg)
+### ![Home Page](./assets/image.jpg)
 Displays company advantages.
 Includes a link to start using the application, redirecting users to the "Teachers" page.
 Implements styling with variations in color palettes or a prototype for uniqueness.
 
-### [Teachers Page](./assets/teachers1.jpg)
+### ![Teachers Page](./assets/teachers1.jpg)
 Renders teacher cards with basic information.
 Allows users to load more teacher cards dynamically.
 Implements actions such as adding a teacher to favorites, expanding detailed information, and booking a trial lesson.
 
-### [Favorites Page](./assets/favorites1.jpg)
+### ![Favorites Page](./assets/favorites1.jpg)
 A private page accessible to authenticated users.
 Displays teacher cards that the user has added to favorites.
 Styled similarly to the "Teachers" page.
